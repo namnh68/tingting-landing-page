@@ -89,3 +89,21 @@ export const TESTIMONIALS = [
     refundAmount: "",
   },
 ] as const;
+
+export const FEEDBACK_IMAGES = [
+  {
+    src: "/images/feedback/feedback-01.jpg",
+    alt: "Thành viên hoàn tiền thành công qua Ting Ting",
+    caption: "Hoàn tiền đơn Shopee",
+  },
+  {
+    src: "/images/feedback/feedback-02.jpg",
+    alt: "Chat xác nhận hoàn tiền từ nhóm Ting Ting",
+    caption: "Hoàn tiền đơn TikTok Shop",
+  },
+  {
+    src: "/images/feedback/feedback-03.jpg",
+    alt: "Thành viên chia sẻ trải nghiệm nhóm Ting Ting",
+    caption: "Feedback thành viên",
+  },
+] as const;

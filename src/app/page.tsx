@@ -4,6 +4,7 @@ import { SocialProof } from "@/components/social-proof";
 import { HowItWorks } from "@/components/how-it-works";
 import { Comparison } from "@/components/comparison";
 import { Testimonials } from "@/components/testimonials";
+import { FeedbackScreenshots } from "@/components/feedback-screenshots";
 import { FAQ } from "@/components/faq";
 import { Promotion } from "@/components/promotion";
 import { CTAFinal } from "@/components/cta-final";
@@ -19,6 +20,7 @@ export default function Home() {
         <HowItWorks />
         <Comparison />
         <Testimonials />
+        <FeedbackScreenshots />
         <FAQ />
         <Promotion />
         <CTAFinal />
