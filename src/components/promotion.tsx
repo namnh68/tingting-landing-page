@@ -5,17 +5,17 @@ const BENEFITS = [
   {
     icon: FiGift,
     title: "Miễn phí trọn đời",
-    description: "Không mất phí tham gia, không có ẩn phí. Miễn phí 100% mãi mãi.",
+    description: "Không mất phí tham gia, chỉ cần tham gia vào nhóm Zalo, gửi link sản phẩm.",
   },
   {
     icon: FiShield,
     title: "An toàn tuyệt đối",
-    description: "Link chính hãng từ Shopee/TikTok. Chỉ thêm mã affiliate, không thay đổi gì.",
+    description: "Vẫn là link sản phẩm của người mua, chỉ gắn thêm Aff để nhận được hoa hồng.",
   },
   {
     icon: FiZap,
     title: "Tự động & nhanh chóng",
-    description: "Bot xử lý tự động, gửi link xong 5 giây là có link hoàn tiền.",
+    description: "Bot xử lý tự động, trả link có hoa hồng ngay lập tức",
   },
 ];
 

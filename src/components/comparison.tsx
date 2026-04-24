@@ -5,24 +5,18 @@ const COMPARISON_ROWS = [
   {
     feature: "Hoàn tiền",
     normal: "0%",
-    tingting: "Lên đến 80% hoa hồng",
+    tingting: "80% hoa hồng sản phẩm",
     normalBad: true,
   },
   {
-    feature: "Giá sản phẩm",
-    normal: "Giống nhau",
-    tingting: "Giống nhau",
-    normalBad: false,
-  },
-  {
-    feature: "Bước thêm",
+    feature: "Thêm bước",
     normal: "Không",
-    tingting: "Chỉ 1 bước gửi link",
+    tingting: "Chỉ 1 bước gửi link vào nhóm",
     normalBad: false,
   },
   {
     feature: "Hỗ trợ",
-    normal: "Tự lo",
+    normal: "Tự lực",
     tingting: "24/7 trong nhóm Zalo",
     normalBad: true,
   },

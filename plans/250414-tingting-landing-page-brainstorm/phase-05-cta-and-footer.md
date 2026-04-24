@@ -51,18 +51,18 @@ import { FiGift, FiShield, FiZap } from "react-icons/fi";
 const BENEFITS = [
   {
     icon: FiGift,
-    title: "Mien phi tron doi",
-    description: "Khong mat phi tham gia, khong co an phi. Mien phi 100% mai mai.",
+    title: "Miễn phí trọn đời",
+    description: "Không mất phí tham gia, chỉ cần tham gia vào nhóm Zalo, gửi link sản phẩm.",
   },
   {
     icon: FiShield,
-    title: "An toan tuyet doi",
-    description: "Link chinh hang tu Shopee/TikTok. Chi them ma affiliate, khong thay doi gi.",
+    title: "An toàn tuyệt đối",
+    description: "Vẫn là link sản phẩm của người mua, chỉ gắn thêm Aff để nhận được hoa hồng.",
   },
   {
     icon: FiZap,
     title: "Tu dong & nhanh chong",
-    description: "Bot xu ly tu dong, gui link xong 5 giay la co link hoan tien.",
+    description: "Bot xử lý tự động, trả link có hoa hồng ngay lập tức",
   },
 ];
 

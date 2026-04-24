@@ -1,9 +1,9 @@
-export const ZALO_GROUP_LINK = "https://zalo.me/g/YOUR_GROUP_ID";
+export const ZALO_GROUP_LINK = "https://zalo.me/g/icqgkh803";
 
 export const STATS = {
   members: { value: 100, suffix: "+", label: "Thành viên tin tưởng" },
-  orders: { value: 300, suffix: "+", label: "Đơn hàng hoàn tiền thành công" },
-  refunded: { value: 5, suffix: " triệu+", label: "VND đã hoàn cho thành viên" },
+  orders: { value: 1000, suffix: "+", label: "Đơn hàng hoàn tiền thành công" },
+  refunded: { value: 10, suffix: " triệu+", label: "VND đã hoàn cho thành viên" },
 } as const;
 
 export const HOW_IT_WORKS_STEPS = [
@@ -33,41 +33,59 @@ export const NAV_ITEMS = [
 
 export const FAQ_ITEMS = [
   {
+    question: "Dịch vụ này là gì và tại sao tôi lại được nhận tiền?",
+    answer:
+      "Là mô hình Hoàn tiền. Bạn mua hàng qua link của Bot, chúng tôi nhận hoa hồng từ sàn (Shopee/TikTok) và chia lại 80% số tiền đó cho bạn.",
+  },
+  {
     question: "Có mất phí tham gia không?",
-    answer: "Hoàn toàn miễn phí! Bạn không cần trả bất kỳ chi phí nào để tham gia nhóm và sử dụng dịch vụ hoàn tiền.",
+    answer:
+      "Hoàn toàn miễn phí. Bạn không phải trả bất kỳ chi phí nào để sử dụng Bot và tham gia nhóm."
   },
   {
-    question: "Hoàn tiền bao lâu?",
-    answer: "Thời gian hoàn tiền theo chu kỳ của từng sàn thương mại. Shopee thường từ 30-45 ngày, TikTok Shop từ 15-30 ngày sau khi đơn hàng hoàn tất.",
+    question: "Tại sao lại chia tận 80% hoa hồng?",
+    answer:
+      "Chúng tôi muốn xây dựng cộng đồng lớn. Thay vì giữ tất cả, chúng tôi chia sẻ phần lớn lợi nhuận để bạn gắn bó lâu dài.",
   },
   {
-    question: "Có an toàn không?",
-    answer: "Hoàn toàn an toàn! Link sản phẩm vẫn là link chính hãng từ Shopee/TikTok Shop. Chúng tôi chỉ thêm mã affiliate để theo dõi hoa hồng, không ảnh hưởng đến đơn hàng của bạn.",
+    question: "Có được dùng thêm mã giảm giá (Voucher) không?",
+    answer:
+      "Có. Bạn vẫn dùng mã giảm giá, Freeship của sàn bình thường. Tiền hoàn là phần bạn nhận thêm. Và chúng tôi sẽ giúp bạn gắn mã 20-25% khi có chương trình của sàn.",
   },
   {
-    question: "Áp dụng cho sàn thương mại nào?",
-    answer: "Hiện tại hỗ trợ Shopee và TikTok Shop — hai sàn thương mại điện tử lớn nhất Việt Nam.",
-  },
-  {
-    question: "Tiền hoàn về đâu?",
-    answer: "Tiền hoàn sẽ được chuyển khoản trực tiếp vào tài khoản ngân hàng của bạn. Hỗ trợ tất cả ngân hàng tại Việt Nam.",
+    question: "Tôi có phải chờ để nhận được link có hoa hồng không?",
+    answer:
+      "Không, khi bạn gửi link, sẽ có BOT gửi lại ngay lập tức, không làm mất cảm ứng mua sắm của bạn.",
   },
 ] as const;
 
 export const TESTIMONIALS = [
-  {
-    name: "Thành viên A.",
-    content: "Mua điện thoại 10 triệu, được hoàn lại gần 300k. Chỉ cần gửi link là xong, dễ quá!",
+{
+    name: "Khánh An",
+    content:
+      "Mua điện thoại 10 triệu, được hoàn lại gần 300k. Chỉ cần gửi link là xong, dễ quá!",
+    orderAmount: "10,000,000đ",
     refundAmount: "~300,000đ",
   },
   {
-    name: "Thành viên B.",
-    content: "Tham gia 2 tháng, tổng hoàn được gần 1 triệu. Mua gì cũng gửi link trước, không mất gì mà được tiền.",
+    name: "Thanh Huyền",
+    content:
+      "Tham gia 2 tháng, tổng hoàn được gần 1 triệu. Mua gì cũng gửi link trước, không mất gì mà được tiền.",
+    orderAmount: "Nhiều đơn",
     refundAmount: "~1,000,000đ",
   },
   {
-    name: "Thành viên C.",
-    content: "Bot trả link nhanh lắm, gửi link xong 5 giây là có link mới. Rất tiện lợi!",
+    name: "Bùi Ngọc",
+    content:
+      "Bot trả link ngay tức thì, không phải chờ đợi. Rất tiện lợi!",
+    orderAmount: "",
+    refundAmount: "",
+  },
+   {
+    name: "Hồng Anh",
+    content:
+      "Bot trả link ngay tức thì, không phải chờ đợi. Rất tiện lợi!",
+    orderAmount: "",
     refundAmount: "",
   },
 ] as const;
