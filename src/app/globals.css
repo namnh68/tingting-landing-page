@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* === Dark mode via class strategy === */
+@variant dark (&:is(.dark *));
+
+/* === Custom Theme Tokens (Tailwind v4 CSS-first config) === */
+@theme {
+  /* Font family */
+  --font-sans: var(--font-be-vietnam-pro), "Be Vietnam Pro", system-ui, sans-serif;
+
+  /* Brand colors */
+  --color-brand-orange: #FF6B35;
+  --color-brand-yellow: #F7931E;
+  --color-brand-red: #E63946;
+
+  /* Light theme surface colors */
+  --color-surface-primary: #FFFFFF;
+  --color-surface-secondary: #F8FAFC;
+  --color-surface-tertiary: #F1F5F9;
+
+  /* Dark theme surface colors */
+  --color-dark-primary: #0F172A;
+  --color-dark-secondary: #1E293B;
+  --color-dark-tertiary: #334155;
+
+  /* Text colors */
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+
+  /* Gradient stops */
+  --color-gradient-start: #FF6B35;
+  --color-gradient-end: #F7931E;
+}
+
+/* === Global Styles === */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-primary text-text-primary transition-colors duration-300;
+  }
+
+  .dark body {
+    background-color: #0F172A;
+    color: #E2E8F0;
+  }
+
+  ::selection {
+    background-color: #FF6B35;
+    color: white;
+  }
+}
+
+/* === Custom Utilities === */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to right, #FF6B35, #F7931E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-brand {
+    background: linear-gradient(to right, #FF6B35, #F7931E);
+  }
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
