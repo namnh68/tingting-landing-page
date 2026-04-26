@@ -50,6 +50,7 @@ Build a single-page landing page for "Ting Ting - San deal hoi - Hoan hoa hong" 
 | 6 | [Animations & Polish](./phase-06-animations-and-polish.md) | 1.5h | complete | Phase 3-5 |
 | 7 | [SEO, Metadata & Deployment](./phase-07-seo-and-deployment.md) | 0.5h | complete | Phase 6 |
 | 8 | [Feedback Screenshots Gallery](./phase-08-feedback-screenshots.md) | 1.5h | complete | Phase 4, 6 |
+| 9 | [Mobile Responsive Polish](./phase-09-mobile-responsive-polish.md) | 2h | complete | Phase 8 |
 
 ## Project Structure
 

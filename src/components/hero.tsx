@@ -4,7 +4,7 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <section id="hero-section" className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/10 via-brand-yellow/5 to-transparent dark:from-brand-orange/5 dark:via-transparent dark:to-transparent" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-12 md:py-20">
@@ -12,7 +12,7 @@ export function Hero() {
           <ScrollReveal variant="fade-up" delay={0.1} className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight dark:text-white">
               Mua sắm thông minh{" "}
-              <span className="text-gradient">Hoàn tiền lên đến 80%</span>
+              <span className="text-gradient">Hoàn tiền lên hoa hồng 80%</span>
             </h1>
             <p className="mt-4 text-lg text-text-secondary dark:text-gray-400 max-w-lg mx-auto md:mx-0">
               Gửi link sản phẩm Shopee, TikTok Shop vào nhóm Zalo — nhận hoàn

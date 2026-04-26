@@ -26,9 +26,9 @@ function StatItem({
   const { count, ref } = useCounter({ end: value });
 
   return (
-    <div ref={ref} className="flex flex-col items-center gap-2 p-4">
+    <div ref={ref} className="flex flex-col items-center gap-2 p-2 sm:p-4">
       <Icon className={`h-8 w-8 ${color}`} />
-      <div className="text-3xl sm:text-4xl font-bold text-text-primary dark:text-white">
+      <div className="text-2xl sm:text-4xl font-bold text-text-primary dark:text-white">
         {count}
         {suffix}
       </div>
@@ -43,7 +43,7 @@ export function SocialProof() {
   return (
     <section className="py-12 bg-surface-secondary dark:bg-dark-secondary">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-2 sm:gap-6">
           {STAT_CONFIG.map(({ key, icon, color }) => (
             <StatItem
               key={key}

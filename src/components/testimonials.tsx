@@ -73,7 +73,7 @@ export function Testimonials() {
           {canScrollLeft && (
             <button
               onClick={() => scroll("left")}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-10 w-10 rounded-full bg-surface-primary dark:bg-dark-secondary shadow-lg flex items-center justify-center hover:bg-surface-secondary dark:hover:bg-dark-tertiary transition-colors"
+              className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 h-10 w-10 rounded-full bg-surface-primary dark:bg-dark-secondary shadow-lg items-center justify-center hover:bg-surface-secondary dark:hover:bg-dark-tertiary transition-colors"
               aria-label="Previous testimonial"
             >
               <FiChevronLeft className="h-5 w-5 dark:text-white" />
@@ -82,7 +82,7 @@ export function Testimonials() {
           {canScrollRight && (
             <button
               onClick={() => scroll("right")}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-10 w-10 rounded-full bg-surface-primary dark:bg-dark-secondary shadow-lg flex items-center justify-center hover:bg-surface-secondary dark:hover:bg-dark-tertiary transition-colors"
+              className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 h-10 w-10 rounded-full bg-surface-primary dark:bg-dark-secondary shadow-lg items-center justify-center hover:bg-surface-secondary dark:hover:bg-dark-tertiary transition-colors"
               aria-label="Next testimonial"
             >
               <FiChevronRight className="h-5 w-5 dark:text-white" />
@@ -97,7 +97,7 @@ export function Testimonials() {
             {TESTIMONIALS.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[300px] snap-center rounded-2xl bg-surface-secondary dark:bg-dark-secondary p-6 shadow-sm"
+                className="flex-shrink-0 w-[85vw] sm:w-[300px] snap-center rounded-2xl bg-surface-secondary dark:bg-dark-secondary p-6 shadow-sm"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-10 rounded-full bg-brand-orange/10 flex items-center justify-center">

@@ -33,7 +33,7 @@ export function CTAFinal() {
               href={ZALO_GROUP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block rounded-full bg-white px-10 py-4 text-lg font-bold text-brand-orange shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all"
+              className="block sm:inline-block w-full sm:w-auto text-center rounded-full bg-white px-10 py-4 text-lg font-bold text-brand-orange shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all"
             >
               Tham gia nhóm Zalo
             </a>

@@ -9,12 +9,13 @@ import { FAQ } from "@/components/faq";
 import { Promotion } from "@/components/promotion";
 import { CTAFinal } from "@/components/cta-final";
 import { Footer } from "@/components/footer";
+import { StickyCtaBar } from "@/components/sticky-cta";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main className="pb-20 md:pb-0">
         <Hero />
         <SocialProof />
         <HowItWorks />
@@ -26,6 +27,7 @@ export default function Home() {
         <CTAFinal />
       </main>
       <Footer />
+      <StickyCtaBar />
     </>
   );
 }

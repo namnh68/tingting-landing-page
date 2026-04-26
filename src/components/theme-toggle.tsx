@@ -15,7 +15,7 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="rounded-full p-2 hover:bg-surface-tertiary dark:hover:bg-dark-tertiary transition-colors"
+        className="rounded-full p-3 hover:bg-surface-tertiary dark:hover:bg-dark-tertiary transition-colors"
         aria-label="Toggle theme"
       >
         <div className="h-5 w-5" />
@@ -26,7 +26,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="rounded-full p-2 hover:bg-surface-tertiary dark:hover:bg-dark-tertiary transition-colors"
+      className="rounded-full p-3 hover:bg-surface-tertiary dark:hover:bg-dark-tertiary transition-colors"
       aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
     >
       {theme === "dark" ? (
