@@ -14,7 +14,7 @@ export function BaiVietPreview() {
         <ScrollReveal className="mb-10 flex items-end justify-between">
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold dark:text-white">
-              Bài viết <span className="text-gradient">hữu ích</span>
+              Mẹo nhỏ <span className="text-gradient">hữu ích</span>
             </h2>
             <p className="mt-2 text-text-secondary dark:text-gray-400 text-sm">
               Mẹo mua sắm & hướng dẫn hoàn tiền
@@ -41,7 +41,7 @@ export function BaiVietPreview() {
             href="/bai-viet"
             className="inline-flex items-center gap-1 text-sm font-medium text-brand-orange dark:text-brand-yellow hover:underline"
           >
-            Xem tất cả bài viết →
+            Xem tất cả mẹo nhỏ →
           </Link>
         </ScrollReveal>
       </div>

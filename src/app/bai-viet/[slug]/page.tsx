@@ -86,7 +86,7 @@ export default async function BaiVietDetailPage({
             </Link>
             <span className="mx-2">›</span>
             <Link href="/bai-viet" className="hover:text-brand-orange dark:hover:text-brand-yellow transition-colors">
-              Bài viết
+              Mẹo nhỏ
             </Link>
             <span className="mx-2">›</span>
             <span className="text-text-secondary dark:text-gray-300">{frontmatter.title}</span>

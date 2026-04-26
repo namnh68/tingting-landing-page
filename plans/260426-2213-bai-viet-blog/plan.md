@@ -1,6 +1,6 @@
 ---
-title: "Ting Ting - Tính năng Bài Viết (Blog)"
-description: "Thêm mục Bài viết vào landing page: MDX files, SSG, chuẩn SEO, section preview sau FAQ"
+title: "Ting Ting - Tính năng Mẹo Nhỏ (Blog)"
+description: "Thêm mục Mẹo nhỏ vào landing page: MDX files, SSG, chuẩn SEO, section preview sau FAQ"
 status: completed
 priority: P1
 effort: 3.5h
@@ -11,11 +11,11 @@ completed: 2026-04-26
 brainstorm: plans/reports/brainstorm-260426-2213-bai-viet-blog.md
 ---
 
-# Ting Ting - Tính năng Bài Viết
+# Ting Ting - Tính năng Mẹo Nhỏ
 
 ## Overview
 
-Thêm mục "Bài viết" vào landing page Ting Ting. Người dùng có thể đọc bài viết hữu ích về mua sắm tiết kiệm. Dev quản lý bài bằng cách viết file MDX và deploy lại.
+Thêm mục "Mẹo nhỏ" vào landing page Ting Ting. Người dùng có thể đọc các mẹo nhỏ hữu ích về mua sắm tiết kiệm. Dev quản lý bài bằng cách viết file MDX và deploy lại.
 
 **Approach:** MDX files + Next.js SSG — static HTML hoàn toàn, SEO tốt nhất, tương thích Cloudflare Workers.
 
