@@ -26,10 +26,10 @@ export const HOW_IT_WORKS_STEPS = [
 ] as const;
 
 export const NAV_ITEMS = [
-  { label: "Cách hoạt động", href: "#how-it-works" },
-  { label: "So sánh", href: "#comparison" },
-  { label: "Đánh giá", href: "#testimonials" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Cách hoạt động", href: "/#how-it-works" },
+  { label: "So sánh", href: "/#comparison" },
+  { label: "Đánh giá", href: "/#testimonials" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Mẹo nhỏ", href: "/bai-viet" },
 ] as const;
 

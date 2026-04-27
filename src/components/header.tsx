@@ -12,7 +12,6 @@ export function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
-      setMenuOpen(false);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -34,8 +33,8 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/80 dark:bg-dark-primary/80 backdrop-blur-md shadow-sm"
+        scrolled || menuOpen
+          ? "bg-white dark:bg-dark-primary shadow-sm"
           : "bg-transparent"
       }`}
     >
