@@ -1,4 +1,5 @@
 export const ZALO_GROUP_LINK = "https://zalo.me/g/icqgkh803";
+export const ZALO_PERSONAL_LINK = "https://zalo.me/0989210393";
 
 export const STATS = {
   members: { value: 100, suffix: "+", label: "Thành viên tin tưởng" },

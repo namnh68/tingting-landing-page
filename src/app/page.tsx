@@ -11,6 +11,7 @@ import { Promotion } from "@/components/promotion";
 import { CTAFinal } from "@/components/cta-final";
 import { Footer } from "@/components/footer";
 import { StickyCtaBar } from "@/components/sticky-cta";
+import { FloatingButtons } from "@/components/floating-buttons";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       </main>
       <Footer />
       <StickyCtaBar />
+      <FloatingButtons />
     </>
   );
 }
