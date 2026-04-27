@@ -12,23 +12,23 @@ completed: 2026-04-26
 ## Overview
 
 Tạo 2 Next.js App Router pages:
-1. `/bai-viet` — danh sách tất cả bài viết (SSG)
-2. `/bai-viet/[slug]` — nội dung từng bài (SSG + generateMetadata + JSON-LD)
+1. `/tips` — danh sách tất cả bài viết (SSG)
+2. `/tips/[slug]` — nội dung từng bài (SSG + generateMetadata + JSON-LD)
 
 ## Files to Create
 
-- `src/app/bai-viet/page.tsx`
-- `src/app/bai-viet/[slug]/page.tsx`
+- `src/app/tips/page.tsx`
+- `src/app/tips/[slug]/page.tsx`
 
 ## Implementation
 
-### `src/app/bai-viet/page.tsx`
+### `src/app/tips/page.tsx`
 
 ```typescript
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
-import { BaiVietCard } from "@/components/bai-viet-card";
+import { BaiVietCard } from "@/components/tips-card";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
@@ -89,7 +89,7 @@ export default function BaiVietPage() {
 }
 ```
 
-### `src/app/bai-viet/[slug]/page.tsx`
+### `src/app/tips/[slug]/page.tsx`
 
 ```typescript
 import type { Metadata } from "next";
@@ -126,11 +126,11 @@ export async function generateMetadata({
       description: frontmatter.description,
       type: "article",
       publishedTime: frontmatter.date,
-      url: `${SITE_URL}/bai-viet/${frontmatter.slug}`,
+      url: `${SITE_URL}/tips/${frontmatter.slug}`,
       siteName: "Ting Ting",
     },
     alternates: {
-      canonical: `${SITE_URL}/bai-viet/${frontmatter.slug}`,
+      canonical: `${SITE_URL}/tips/${frontmatter.slug}`,
     },
   };
 }
@@ -154,7 +154,7 @@ export default async function BaiVietDetailPage({
     datePublished: frontmatter.date,
     author: { "@type": "Organization", name: "Ting Ting" },
     publisher: { "@type": "Organization", name: "Ting Ting", url: SITE_URL },
-    url: `${SITE_URL}/bai-viet/${frontmatter.slug}`,
+    url: `${SITE_URL}/tips/${frontmatter.slug}`,
     keywords: frontmatter.tags?.join(", "),
   };
 
@@ -179,7 +179,7 @@ export default async function BaiVietDetailPage({
               Trang chủ
             </Link>
             <span className="mx-2">›</span>
-            <Link href="/bai-viet" className="hover:text-brand-orange dark:hover:text-brand-yellow transition-colors">
+            <Link href="/tips" className="hover:text-brand-orange dark:hover:text-brand-yellow transition-colors">
               Bài viết
             </Link>
             <span className="mx-2">›</span>
@@ -223,7 +223,7 @@ export default async function BaiVietDetailPage({
           {/* Footer nav */}
           <div className="mt-12 pt-8 border-t border-surface-tertiary dark:border-dark-tertiary">
             <Link
-              href="/bai-viet"
+              href="/tips"
               className="text-sm text-text-secondary hover:text-brand-orange dark:text-gray-400 dark:hover:text-brand-yellow transition-colors"
             >
               ← Xem tất cả bài viết
@@ -262,14 +262,14 @@ Nếu không muốn cài thêm package, thay `prose` classes bằng custom CSS c
 
 ## Todo
 
-- [x] Tạo `src/app/bai-viet/page.tsx`
-- [x] Tạo `src/app/bai-viet/[slug]/page.tsx`
+- [x] Tạo `src/app/tips/page.tsx`
+- [x] Tạo `src/app/tips/[slug]/page.tsx`
 - [x] Kiểm tra `@tailwindcss/typography` — cài nếu chưa có
 - [x] Chạy `npm run build` verify không lỗi
 
 ## Success Criteria
 
-- `/bai-viet` render danh sách bài, SSG
-- `/bai-viet/meo-mua-sam-shopee-tiet-kiem` render đúng nội dung
-- `/bai-viet/khong-ton-tai` → 404 page
+- `/tips` render danh sách bài, SSG
+- `/tips/meo-mua-sam-shopee-tiet-kiem` render đúng nội dung
+- `/tips/khong-ton-tai` → 404 page
 - JSON-LD Article có trong `<head>` của trang bài viết

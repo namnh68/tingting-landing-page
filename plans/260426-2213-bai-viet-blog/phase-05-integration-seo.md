@@ -25,7 +25,7 @@ Kết nối tất cả lại: thêm `BaiVietPreview` vào landing page sau FAQ, 
 
 ```typescript
 // Thêm import:
-import { BaiVietPreview } from "@/components/bai-viet-preview";
+import { BaiVietPreview } from "@/components/tips-preview";
 
 // Trong JSX, thêm sau <FAQ />:
 <FAQ />
@@ -44,7 +44,7 @@ import { Comparison } from "@/components/comparison";
 import { Testimonials } from "@/components/testimonials";
 import { FeedbackScreenshots } from "@/components/feedback-screenshots";
 import { FAQ } from "@/components/faq";
-import { BaiVietPreview } from "@/components/bai-viet-preview";
+import { BaiVietPreview } from "@/components/tips-preview";
 import { Promotion } from "@/components/promotion";
 import { CTAFinal } from "@/components/cta-final";
 import { Footer } from "@/components/footer";
@@ -81,11 +81,11 @@ export const NAV_ITEMS = [
   { label: "So sánh", href: "#comparison" },
   { label: "Đánh giá", href: "#testimonials" },
   { label: "FAQ", href: "#faq" },
-  { label: "Bài viết", href: "/bai-viet" },
+  { label: "Bài viết", href: "/tips" },
 ] as const;
 ```
 
-**Lưu ý:** Item mới dùng `href: "/bai-viet"` (absolute path) thay vì `#anchor`. Header hiện tại dùng `<a href={item.href}>` nên hoạt động bình thường.
+**Lưu ý:** Item mới dùng `href: "/tips"` (absolute path) thay vì `#anchor`. Header hiện tại dùng `<a href={item.href}>` nên hoạt động bình thường.
 
 ### 3. `src/app/sitemap.ts` — include blog posts
 
@@ -100,7 +100,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
 
   const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${SITE_URL}/bai-viet/${post.slug}`,
+    url: `${SITE_URL}/tips/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly",
     priority: 0.7,
@@ -114,7 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${SITE_URL}/bai-viet`,
+      url: `${SITE_URL}/tips`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
@@ -133,9 +133,9 @@ npm run build
 ```
 
 Kiểm tra output:
-- `○ /bai-viet` — static page ✓
-- `○ /bai-viet/meo-mua-sam-shopee-tiet-kiem` — static page ✓
-- `○ /bai-viet/huong-dan-hoan-tien-tiktok-shop` — static page ✓
+- `○ /tips` — static page ✓
+- `○ /tips/meo-mua-sam-shopee-tiet-kiem` — static page ✓
+- `○ /tips/huong-dan-hoan-tien-tiktok-shop` — static page ✓
 - `○ /sitemap.xml` — static ✓
 
 ## Todo
@@ -150,7 +150,7 @@ Kiểm tra output:
 
 - `npm run build` thành công, không lỗi TypeScript
 - Landing page: section "Bài viết hữu ích" hiển thị sau FAQ
-- Header: có link "Bài viết" dẫn tới `/bai-viet`
+- Header: có link "Bài viết" dẫn tới `/tips`
 - `sitemap.xml` chứa URL từng bài viết
 - Dark/light mode đúng trên tất cả trang mới
 - Mobile responsive: grid 1 cột trên mobile, 2-3 cột trên desktop

@@ -41,8 +41,8 @@ Thêm mục "Mẹo nhỏ" vào landing page Ting Ting. Người dùng có thể 
 ```
 content/posts/               ← Phase 1
 src/lib/posts.ts             ← Phase 2
-src/app/bai-viet/**          ← Phase 3
-src/components/bai-viet-*.tsx ← Phase 4
+src/app/tips/**          ← Phase 3
+src/components/tips-*.tsx ← Phase 4
 src/app/page.tsx             ← Phase 5
 src/lib/constants.ts         ← Phase 5
 src/app/sitemap.ts           ← Phase 5
@@ -56,8 +56,8 @@ npm install gray-matter next-mdx-remote
 
 ## URL Structure
 
-- `/bai-viet` — danh sách tất cả bài
-- `/bai-viet/[slug]` — nội dung từng bài
+- `/tips` — danh sách tất cả bài
+- `/tips/[slug]` — nội dung từng bài
 
 ## Success Criteria
 

@@ -14,7 +14,7 @@ export function BaiVietCard({ post }: BaiVietCardProps) {
 
   return (
     <Link
-      href={`/bai-viet/${post.slug}`}
+      href={`/tips/${post.slug}`}
       className="group block rounded-2xl bg-surface-secondary dark:bg-dark-secondary p-5 hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5"
     >
       {post.tags && post.tags.length > 0 && (

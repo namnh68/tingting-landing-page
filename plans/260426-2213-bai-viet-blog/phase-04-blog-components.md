@@ -17,12 +17,12 @@ Tạo 2 components:
 
 ## Files to Create
 
-- `src/components/bai-viet-card.tsx`
-- `src/components/bai-viet-preview.tsx`
+- `src/components/tips-card.tsx`
+- `src/components/tips-preview.tsx`
 
 ## Implementation
 
-### `src/components/bai-viet-card.tsx`
+### `src/components/tips-card.tsx`
 
 Server Component — không cần `"use client"`.
 
@@ -43,7 +43,7 @@ export function BaiVietCard({ post }: BaiVietCardProps) {
 
   return (
     <Link
-      href={`/bai-viet/${post.slug}`}
+      href={`/tips/${post.slug}`}
       className="group block rounded-2xl bg-surface-secondary dark:bg-dark-secondary p-5 hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5"
     >
       {/* Tags */}
@@ -87,14 +87,14 @@ export function BaiVietCard({ post }: BaiVietCardProps) {
 }
 ```
 
-### `src/components/bai-viet-preview.tsx`
+### `src/components/tips-preview.tsx`
 
 Server Component — gọi `getAllPosts()` trực tiếp, lấy 3 bài mới nhất.
 
 ```typescript
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
-import { BaiVietCard } from "@/components/bai-viet-card";
+import { BaiVietCard } from "@/components/tips-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 export function BaiVietPreview() {
@@ -116,7 +116,7 @@ export function BaiVietPreview() {
             </p>
           </div>
           <Link
-            href="/bai-viet"
+            href="/tips"
             className="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-brand-orange dark:text-brand-yellow hover:underline flex-shrink-0 ml-4"
           >
             Xem tất cả →
@@ -134,7 +134,7 @@ export function BaiVietPreview() {
         {/* Mobile "Xem tất cả" */}
         <ScrollReveal delay={0.2} className="mt-6 text-center sm:hidden">
           <Link
-            href="/bai-viet"
+            href="/tips"
             className="inline-flex items-center gap-1 text-sm font-medium text-brand-orange dark:text-brand-yellow hover:underline"
           >
             Xem tất cả bài viết →
@@ -168,8 +168,8 @@ text-gradient (class hiện có)
 
 ## Todo
 
-- [x] Tạo `src/components/bai-viet-card.tsx`
-- [x] Tạo `src/components/bai-viet-preview.tsx`
+- [x] Tạo `src/components/tips-card.tsx`
+- [x] Tạo `src/components/tips-preview.tsx`
 - [x] Verify không có lỗi TypeScript
 
 ## Success Criteria

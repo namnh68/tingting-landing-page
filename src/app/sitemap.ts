@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts();
 
   const postEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-    url: `${SITE_URL}/bai-viet/${post.slug}`,
+    url: `${SITE_URL}/tips/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly",
     priority: 0.7,
@@ -23,7 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${SITE_URL}/bai-viet`,
+      url: `${SITE_URL}/tips`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,

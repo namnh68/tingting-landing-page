@@ -21,7 +21,7 @@ export function BaiVietPreview() {
             </p>
           </div>
           <Link
-            href="/bai-viet"
+            href="/tips"
             className="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-brand-orange dark:text-brand-yellow hover:underline flex-shrink-0 ml-4"
           >
             Xem tất cả →
@@ -38,7 +38,7 @@ export function BaiVietPreview() {
 
         <ScrollReveal delay={0.2} className="mt-6 text-center sm:hidden">
           <Link
-            href="/bai-viet"
+            href="/tips"
             className="inline-flex items-center gap-1 text-sm font-medium text-brand-orange dark:text-brand-yellow hover:underline"
           >
             Xem tất cả mẹo nhỏ →
