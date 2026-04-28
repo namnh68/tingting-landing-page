@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { ThemeToggle } from "./theme-toggle";
 import { ZALO_GROUP_LINK, NAV_ITEMS } from "@/lib/constants";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -40,9 +41,9 @@ export function Header() {
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
-          <a href="/" className="text-xl font-bold text-gradient">
+          <Link href="/" className="text-xl font-bold text-gradient">
             Ting Ting
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-6">
             {NAV_ITEMS.map((item) => (
