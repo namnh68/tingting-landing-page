@@ -95,17 +95,22 @@ export const TESTIMONIALS = [
 export const FEEDBACK_IMAGES = [
   {
     src: "/images/feedback/feedback-01.jpg",
-    alt: "Thành viên hoàn tiền thành công qua Ting Ting",
-    caption: "Hoàn tiền đơn Shopee",
+    alt: "Thành viên hoàn tiền",
+    caption: "Feedback thành viên",
   },
   {
     src: "/images/feedback/feedback-02.jpg",
-    alt: "Chat xác nhận hoàn tiền từ nhóm Ting Ting",
-    caption: "Hoàn tiền đơn TikTok Shop",
+    alt: "Hoàn tiền cho các thành viên trong nhóm",
+    caption: "Hoàn tiền hoa hồng",
   },
   {
     src: "/images/feedback/feedback-03.jpg",
     alt: "Thành viên chia sẻ trải nghiệm nhóm Ting Ting",
-    caption: "Feedback thành viên",
+    caption: "Bot gửi link cho thành viên",
+  },
+  {
+    src: "/images/feedback/feedback-04.jpg",
+    alt: "Thành viên chia sẻ trải nghiệm nhóm Ting Ting",
+    caption: "Đơn hàng được nhận hoa hồng",
   },
 ] as const;
