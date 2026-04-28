@@ -120,7 +120,7 @@ export function FeedbackScreenshots() {
       id="feedback-screenshots"
       className="py-16 md:py-24 bg-surface-secondary dark:bg-dark-secondary"
     >
-      <div className="mx-auto max-w-4xl px-4 sm:px-6">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold dark:text-white">
             Bằng chứng{" "}
@@ -131,7 +131,7 @@ export function FeedbackScreenshots() {
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           {FEEDBACK_IMAGES.map((img, index) => (
             <ScrollReveal key={index} delay={Math.min(index * 0.1, 0.3)}>
               <button
@@ -144,7 +144,7 @@ export function FeedbackScreenshots() {
                   alt={img.alt}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 640px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 50vw, 25vw"
                   unoptimized
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
