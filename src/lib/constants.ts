@@ -70,7 +70,7 @@ export const TESTIMONIALS = [
     refundAmount: "~300,000đ",
   },
   {
-    name: "Thanh Huyền",
+    name: "Hồng Anh",
     content:
       "Tham gia 2 tháng, tổng hoàn được gần 1 triệu. Mua gì cũng gửi link trước, không mất gì mà được tiền.",
     orderAmount: "Nhiều đơn",
@@ -78,13 +78,6 @@ export const TESTIMONIALS = [
   },
   {
     name: "Bùi Ngọc",
-    content:
-      "Bot trả link ngay tức thì, không phải chờ đợi. Rất tiện lợi!",
-    orderAmount: "",
-    refundAmount: "",
-  },
-   {
-    name: "Hồng Anh",
     content:
       "Bot trả link ngay tức thì, không phải chờ đợi. Rất tiện lợi!",
     orderAmount: "",
