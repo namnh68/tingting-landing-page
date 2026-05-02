@@ -4,26 +4,20 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 const COMPARISON_ROWS = [
   {
     feature: "Hoàn tiền",
-    normal: "0%",
+    normal: "Không có",
     tingting: "80% hoa hồng sản phẩm",
+    normalBad: true,
+  },
+  {
+    feature: "Hỗ trợ",
+    normal: "Không",
+    tingting: "Săn deal hời, mã giảm giá",
     normalBad: true,
   },
   {
     feature: "Thêm bước",
     normal: "Không",
     tingting: "Chỉ 1 bước gửi link vào nhóm",
-    normalBad: false,
-  },
-  {
-    feature: "Hỗ trợ",
-    normal: "Tự lực",
-    tingting: "24/7 trong nhóm Zalo",
-    normalBad: true,
-  },
-  {
-    feature: "Sàn thương mại",
-    normal: "—",
-    tingting: "Shopee, TikTok Shop",
     normalBad: true,
   },
 ];

@@ -12,11 +12,11 @@ export function Hero() {
           <ScrollReveal variant="fade-up" delay={0.1} className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight dark:text-white">
               Mua sắm thông minh{" "}
-              <span className="text-gradient">Hoàn tiền lên hoa hồng 80%</span>
+              <span className="text-gradient">Hoàn tiền 80% hoa hồng</span>
             </h1>
             <p className="mt-4 text-lg text-text-secondary dark:text-gray-400 max-w-lg mx-auto md:mx-0">
-              Gửi link sản phẩm Shopee, TikTok Shop vào nhóm Zalo — nhận hoàn
-              80% hoa hồng affiliate. Miễn phí, an toàn, tự động.
+              Gửi link sản phẩm Shopee, TikTok vào nhóm Zalo để nhận link mua hàng — nhận hoàn
+              80% hoa hồng sản phẩm. Miễn phí, an toàn, tự động.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
               <a

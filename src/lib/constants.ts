@@ -2,26 +2,26 @@ export const ZALO_GROUP_LINK = "https://zalo.me/g/icqgkh803";
 export const ZALO_PERSONAL_LINK = "https://zalo.me/0989210393";
 
 export const STATS = {
-  members: { value: 100, suffix: "+", label: "Thành viên tin tưởng" },
-  orders: { value: 1000, suffix: "+", label: "Đơn hàng hoàn tiền thành công" },
-  refunded: { value: 10, suffix: " triệu+", label: "VND đã hoàn cho thành viên" },
+  members: { value: 125, suffix: "+", label: "Thành viên tin tưởng" },
+  orders: { value: 5000, suffix: "+", label: "Đơn hàng hoàn tiền thành công" },
+  refunded: { value: 20, suffix: " triệu+", label: "VND đã hoàn cho thành viên" },
 } as const;
 
 export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
     title: "Gửi link sản phẩm",
-    description: "Copy link sản phẩm từ Shopee hoặc TikTok Shop, gửi vào nhóm Zalo Ting Ting.",
+    description: "Copy link sản phẩm từ Shopee hoặc TikTok, gửi vào nhóm Zalo Ting Ting.",
   },
   {
     step: 2,
-    title: "Nhận link hoàn tiền",
-    description: "Bot tự động gửi lại link affiliate. Bạn mua hàng bình thường qua link này.",
+    title: "Nhận link mua hàng",
+    description: "Bot tự động gửi lại link mua hàng có tiền hoa hồng. Bạn mua hàng bình thường qua link này.",
   },
   {
     step: 3,
     title: "Nhận hoàn 80% hoa hồng",
-    description: "Đơn hàng thành công, bạn nhận lại 80% hoa hồng affiliate. Chuyển khoản trực tiếp!",
+    description: "Đơn hàng thành công, bạn nhận lại 80% hoa hồng của đơn hàng đó.",
   },
 ] as const;
 
@@ -37,12 +37,12 @@ export const FAQ_ITEMS = [
   {
     question: "Dịch vụ này là gì và tại sao tôi lại được nhận tiền?",
     answer:
-      "Là mô hình Hoàn tiền. Bạn mua hàng qua link của Bot, chúng tôi nhận hoa hồng từ sàn (Shopee/TikTok) và chia lại 80% số tiền đó cho bạn.",
+      "Là mô hình hoàn tiền hoa hồng. Bạn mua hàng qua link có mã Aff của chúng tôi, chúng tôi nhận hoa hồng của sản phẩm bạn đã mua từ sàn (Shopee/TikTok), sau đó chia lại 80% số tiền đó cho bạn.",
   },
   {
-    question: "Có mất phí tham gia không?",
+    question: "Tiền hoa hồng có phải là tiền chênh giá so với thực tế mua hay không?",
     answer:
-      "Hoàn toàn miễn phí. Bạn không phải trả bất kỳ chi phí nào để sử dụng Bot và tham gia nhóm."
+      "Hoàn toàn không. Bạn vẫn thao tác mua với giá bình thường. Khoản hoa hồng này được sàn và shop hỗ trợ thêm."
   },
   {
     question: "Tại sao lại chia tận 80% hoa hồng?",
