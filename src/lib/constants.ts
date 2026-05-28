@@ -2,16 +2,16 @@ export const ZALO_GROUP_LINK = "https://zalo.me/g/icqgkh803";
 export const ZALO_PERSONAL_LINK = "https://zalo.me/0989210393";
 
 export const STATS = {
-  members: { value: 125, suffix: "+", label: "Thành viên tin tưởng" },
-  orders: { value: 5000, suffix: "+", label: "Đơn hàng hoàn tiền thành công" },
-  refunded: { value: 20, suffix: " triệu+", label: "VND đã hoàn cho thành viên" },
+  members: { value: 150, suffix: "+", label: "Thành viên tin tưởng" },
+  orders: { value: 10000, suffix: "+", label: "Đơn hàng hoàn tiền thành công" },
+  refunded: { value: 20, suffix: " triệu+", label: "VND đã hoàn cho thành viên hàng tháng" },
 } as const;
 
 export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
     title: "Gửi link sản phẩm",
-    description: "Copy link sản phẩm từ Shopee hoặc TikTok, gửi vào nhóm Zalo VnTing.",
+    description: "Gửi link sản phẩm từ Shopee hoặc TikTok, gửi vào nhóm Zalo VnTing.",
   },
   {
     step: 2,
@@ -20,8 +20,8 @@ export const HOW_IT_WORKS_STEPS = [
   },
   {
     step: 3,
-    title: "Nhận hoàn 80% hoa hồng",
-    description: "Đơn hàng thành công, bạn nhận lại 80% hoa hồng của đơn hàng đó.",
+    title: "Nhận hoàn hoa hồng",
+    description: "Đơn hàng thành công, bạn nhận lại tiền hoa hồng của đơn hàng đó.",
   },
 ] as const;
 

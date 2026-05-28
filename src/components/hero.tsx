@@ -1,20 +1,26 @@
 import Image from "next/image";
 import { SiShopee, SiTiktok } from "react-icons/si";
-import { FiGift, FiZap, FiShield, FiPercent } from "react-icons/fi";
+import { FiGift, FiZap, FiShield } from "react-icons/fi";
+import {
+  LuShirt, LuSmartphone, LuSparkles, LuHouse,
+  LuFootprints, LuGamepad2, LuApple, LuBookOpen,
+  LuPawPrint, LuDumbbell,
+} from "react-icons/lu";
 import { ZALO_GROUP_LINK } from "@/lib/constants";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import type { IconType } from "react-icons";
 
-const MARQUEE_ITEMS = [
-  { label: "Thời trang", rate: "15%" },
-  { label: "Điện tử", rate: "12%" },
-  { label: "Mỹ phẩm", rate: "18%" },
-  { label: "Nhà cửa", rate: "10%" },
-  { label: "Giày dép", rate: "14%" },
-  { label: "Đồ chơi", rate: "8%" },
-  { label: "Thực phẩm", rate: "6%" },
-  { label: "Sách vở", rate: "10%" },
-  { label: "Thú cưng", rate: "12%" },
-  { label: "Thể thao", rate: "11%" },
+const MARQUEE_ITEMS: { label: string; rate: string; Icon: IconType }[] = [
+  { label: "Thời trang", rate: "15%", Icon: LuShirt },
+  { label: "Điện tử", rate: "12%", Icon: LuSmartphone },
+  { label: "Mỹ phẩm", rate: "18%", Icon: LuSparkles },
+  { label: "Nhà cửa", rate: "10%", Icon: LuHouse },
+  { label: "Giày dép", rate: "14%", Icon: LuFootprints },
+  { label: "Đồ chơi", rate: "8%", Icon: LuGamepad2 },
+  { label: "Thực phẩm", rate: "6%", Icon: LuApple },
+  { label: "Sách vở", rate: "10%", Icon: LuBookOpen },
+  { label: "Thú cưng", rate: "12%", Icon: LuPawPrint },
+  { label: "Thể thao", rate: "11%", Icon: LuDumbbell },
 ];
 
 const HIGHLIGHTS = [
@@ -60,7 +66,7 @@ export function Hero() {
 
             {/* Description */}
             <p className="mt-6 text-lg text-text-secondary dark:text-gray-400 max-w-lg mx-auto md:mx-0 leading-relaxed">
-              Gửi link sản phẩm vào nhóm Zalo — nhận link mua hàng có hoa hồng — mua xong được hoàn tiền. Không mất phí, không rủi ro.
+              Gửi link sản phẩm cần mua — nhận link mua hàng có hoa hồng — mua xong được hoàn tiền. Không mất phí, không rủi ro.
             </p>
 
             {/* Highlight pills */}
@@ -113,7 +119,7 @@ export function Hero() {
               key={i}
               className="inline-flex items-center gap-2 mx-5 text-sm whitespace-nowrap"
             >
-              <FiPercent className="h-3.5 w-3.5 text-brand-orange dark:text-brand-yellow" />
+              <item.Icon className="h-4 w-4 text-brand-orange dark:text-brand-yellow" />
               <span className="font-medium text-text-primary dark:text-gray-300">{item.label}</span>
               <span className="rounded-full bg-brand-orange/10 dark:bg-brand-yellow/10 px-2 py-0.5 text-xs font-bold text-brand-orange dark:text-brand-yellow">
                 {item.rate}
