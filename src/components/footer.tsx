@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="text-xl font-bold text-gradient mb-2">
-              Vn Ting Ting
+              VnTing
             </div>
             <p className="text-sm text-text-secondary dark:text-gray-400">
               Săn deal hời — Hoàn hoa hồng. Tiết kiệm thông minh với Shopee và TikTok Shop.
@@ -48,7 +48,7 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-3 dark:text-white">Liên hệ</h4>
             <ul className="space-y-2 text-sm text-text-secondary dark:text-gray-400">
-              <li>Zalo: Nhóm Vn Ting Ting</li>
+              <li>Zalo: Nhóm VnTing</li>
             </ul>
           </div>
         </div>
@@ -56,14 +56,14 @@ export function Footer() {
         <div className="mt-8 pt-6 border-t border-surface-tertiary dark:border-dark-tertiary">
           <p className="text-xs text-text-muted text-center leading-relaxed">
             Disclaimer: Hoa hồng phụ thuộc vào chính sách affiliate của từng sàn thương mại
-            (Shopee, TikTok Shop). Tỷ lệ hoàn và thời gian xử lý có thể thay đổi. Vn Ting Ting
+            (Shopee, TikTok Shop). Tỷ lệ hoàn và thời gian xử lý có thể thay đổi. VnTing
             hoàn lại 80% hoa hồng affiliate nhận được. Không phải là dịch vụ tài chính.
           </p>
         </div>
 
         <div className="mt-4 text-center">
           <p className="text-xs text-text-muted">
-            &copy; {new Date().getFullYear()} Vn Ting Ting. All rights reserved.
+            &copy; {new Date().getFullYear()} VnTing. All rights reserved.
           </p>
         </div>
       </div>

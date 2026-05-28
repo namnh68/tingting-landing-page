@@ -83,7 +83,7 @@ export function Hero() {
             <div className="rounded-3xl card-glass glow-brand p-8 text-center">
               <Image
                 src="/qr-code.jpg"
-                alt="QR Code nhóm Zalo Vn Ting Ting"
+                alt="QR Code nhóm Zalo VnTing"
                 width={240}
                 height={240}
                 className="rounded-2xl mx-auto"

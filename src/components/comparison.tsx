@@ -44,7 +44,7 @@ export function Comparison() {
             <span className="text-gradient">lợi ích</span>
           </h2>
           <p className="mt-3 text-text-secondary dark:text-gray-400">
-            Mua bình thường vs. Mua qua Vn Ting Ting
+            Mua bình thường vs. Mua qua VnTing
           </p>
         </ScrollReveal>
 
@@ -61,7 +61,7 @@ export function Comparison() {
                     Mua bình thường
                   </th>
                   <th className="px-6 py-4 text-center text-sm font-semibold text-brand-orange">
-                    Mua qua Vn Ting Ting
+                    Mua qua VnTing
                   </th>
                 </tr>
               </thead>
@@ -112,7 +112,7 @@ export function Comparison() {
                     {row.normal}
                   </div>
                   <div className="text-brand-orange dark:text-brand-yellow font-medium">
-                    <div className="text-xs text-text-muted mb-1">Vn Ting Ting</div>
+                    <div className="text-xs text-text-muted mb-1">VnTing</div>
                     {row.tingting}
                   </div>
                 </div>

@@ -9,7 +9,7 @@ const BUTTONS = [
     href: ZALO_GROUP_LINK,
     icon: <FaUsers className="w-5 h-5 shrink-0" />,
     label: "Nhóm Zalo",
-    ariaLabel: "Tham gia nhóm Zalo Vn Ting Ting",
+    ariaLabel: "Tham gia nhóm Zalo VnTing",
     className:
       "bg-gradient-to-br from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600",
   },

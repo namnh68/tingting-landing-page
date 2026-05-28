@@ -14,13 +14,13 @@ export function CTAFinal() {
                 Bắt đầu tiết kiệm ngay hôm nay
               </h2>
               <p className="text-white/85 text-lg mb-8 max-w-md mx-auto">
-                Mỗi đơn hàng không qua Vn Ting Ting là một khoản hoàn tiền bạn đang bỏ lỡ.
+                Mỗi đơn hàng không qua VnTing là một khoản hoàn tiền bạn đang bỏ lỡ.
               </p>
 
               <div className="inline-block rounded-2xl bg-white p-4 shadow-lg mb-6">
                 <Image
                   src="/qr-code.jpg"
-                  alt="QR Code nhóm Zalo Vn Ting Ting"
+                  alt="QR Code nhóm Zalo VnTing"
                   width={180}
                   height={180}
                   className="rounded-lg"

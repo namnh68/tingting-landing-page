@@ -28,7 +28,7 @@ export function Promotion() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold dark:text-white">
-            Tại sao chọn <span className="text-gradient">Vn Ting Ting?</span>
+            Tại sao chọn <span className="text-gradient">VnTing?</span>
           </h2>
           <p className="mt-3 text-text-secondary dark:text-gray-400">
             Đơn giản, minh bạch, và luôn vì lợi ích của bạn

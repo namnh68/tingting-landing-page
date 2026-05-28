@@ -11,7 +11,7 @@ export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
     title: "Gửi link sản phẩm",
-    description: "Copy link sản phẩm từ Shopee hoặc TikTok, gửi vào nhóm Zalo Vn Ting Ting.",
+    description: "Copy link sản phẩm từ Shopee hoặc TikTok, gửi vào nhóm Zalo VnTing.",
   },
   {
     step: 2,
@@ -97,12 +97,12 @@ export const FEEDBACK_IMAGES = [
   },
   {
     src: "/images/feedback/feedback-03.jpg",
-    alt: "Thành viên chia sẻ trải nghiệm nhóm Vn Ting Ting",
+    alt: "Thành viên chia sẻ trải nghiệm nhóm VnTing",
     caption: "Bot gửi link cho thành viên",
   },
   {
     src: "/images/feedback/feedback-04.jpg",
-    alt: "Thành viên chia sẻ trải nghiệm nhóm Vn Ting Ting",
+    alt: "Thành viên chia sẻ trải nghiệm nhóm VnTing",
     caption: "Đơn hàng được nhận hoa hồng",
   },
 ] as const;
