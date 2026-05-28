@@ -61,11 +61,10 @@ export function Testimonials() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold dark:text-white">
-            Thành viên{" "}
-            <span className="text-gradient">nói gì?</span>
+            Hơn 100 người đã <span className="text-gradient">tiết kiệm</span>
           </h2>
           <p className="mt-3 text-text-secondary dark:text-gray-400">
-            Feedback thực từ thành viên nhóm Vn Ting Ting
+            Feedback thực từ thành viên trong nhóm
           </p>
         </ScrollReveal>
 
@@ -97,7 +96,7 @@ export function Testimonials() {
             {TESTIMONIALS.map((testimonial, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[85vw] sm:w-[300px] snap-center rounded-2xl bg-surface-secondary dark:bg-dark-secondary p-6 shadow-sm"
+                className="flex-shrink-0 w-[85vw] sm:w-[300px] snap-center rounded-2xl bg-surface-secondary dark:bg-dark-secondary p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-10 rounded-full bg-brand-orange/10 flex items-center justify-center">

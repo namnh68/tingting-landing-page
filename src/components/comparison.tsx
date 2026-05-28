@@ -5,19 +5,31 @@ const COMPARISON_ROWS = [
   {
     feature: "Hoàn tiền",
     normal: "Không có",
-    tingting: "80% hoa hồng sản phẩm",
+    tingting: "Hoàn 80% hoa hồng",
     normalBad: true,
   },
   {
-    feature: "Hỗ trợ",
+    feature: "Chi phí",
     normal: "Không",
-    tingting: "Săn deal hời, mã giảm giá",
+    tingting: "Miễn phí trọn đời",
+    normalBad: false,
+  },
+  {
+    feature: "Mã giảm giá",
+    normal: "Tự tìm",
+    tingting: "Được gắn mã 20-25% tự động",
     normalBad: true,
   },
   {
-    feature: "Thêm bước",
-    normal: "Không",
+    feature: "Thao tác",
+    normal: "Mua trực tiếp",
     tingting: "Chỉ 1 bước gửi link vào nhóm",
+    normalBad: false,
+  },
+  {
+    feature: "Tốc độ",
+    normal: "—",
+    tingting: "Bot trả link ngay lập tức",
     normalBad: true,
   },
 ];

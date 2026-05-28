@@ -58,15 +58,52 @@
 /* === Custom Utilities === */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(to right, #DB2777, #9333EA);
+    background: linear-gradient(135deg, #DB2777, #9333EA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gradient-brand {
-    background: linear-gradient(to right, #DB2777, #9333EA);
+    background: linear-gradient(135deg, #DB2777, #9333EA);
   }
+
+  .card-glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(219, 39, 119, 0.08);
+  }
+
+  .dark .card-glass {
+    background: rgba(26, 21, 37, 0.8);
+    border: 1px solid rgba(244, 114, 182, 0.1);
+  }
+
+  .glow-brand {
+    box-shadow: 0 0 40px rgba(219, 39, 119, 0.15), 0 0 80px rgba(147, 51, 234, 0.08);
+  }
+
+  .dark .glow-brand {
+    box-shadow: 0 0 40px rgba(244, 114, 182, 0.12), 0 0 80px rgba(147, 51, 234, 0.06);
+  }
+}
+
+/* === Marquee animation === */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-container {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 /* === Reduced Motion === */

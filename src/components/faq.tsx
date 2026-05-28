@@ -53,9 +53,11 @@ export function FAQ() {
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold dark:text-white">
-            Câu hỏi{" "}
-            <span className="text-gradient">thường gặp</span>
+            Câu hỏi <span className="text-gradient">thường gặp</span>
           </h2>
+          <p className="mt-3 text-text-secondary dark:text-gray-400">
+            Giải đáp nhanh những thắc mắc phổ biến
+          </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.2} className="rounded-2xl bg-surface-secondary dark:bg-dark-secondary p-4 sm:p-6">

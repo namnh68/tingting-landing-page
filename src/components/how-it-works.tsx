@@ -11,18 +11,17 @@ export function HowItWorks() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold dark:text-white">
-            Cách hoạt động{" "}
-            <span className="text-gradient">đơn giản</span>
+            Chỉ <span className="text-gradient">3 bước</span> để nhận hoàn tiền
           </h2>
           <p className="mt-3 text-text-secondary dark:text-gray-400 max-w-lg mx-auto">
-            Chỉ 3 bước để bắt đầu tiết kiệm với Vn Ting Ting
+            Đơn giản đến mức ai cũng làm được
           </p>
         </ScrollReveal>
 
         <ScrollReveal stagger staggerDelay={0.15}>
-          <div className="relative grid md:grid-cols-3 gap-10 md:gap-8">
-            {/* Connector dashed line — desktop only, aligns with center of step circles */}
-            <div className="hidden md:block absolute top-8 left-[16.67%] right-[16.67%] border-t-2 border-dashed border-brand-orange/30 dark:border-brand-yellow/20" />
+          <div className="relative grid md:grid-cols-3 gap-10 md:gap-6">
+            {/* Connector line */}
+            <div className="hidden md:block absolute top-10 left-[20%] right-[20%] border-t-2 border-dashed border-brand-orange/20 dark:border-brand-yellow/15" />
 
             {HOW_IT_WORKS_STEPS.map((step, index) => {
               const Icon = STEP_ICONS[index];
@@ -31,19 +30,20 @@ export function HowItWorks() {
                   key={step.step}
                   className="relative flex flex-col items-center text-center"
                 >
-                  {/* Step number — z-10 to sit above connector line */}
-                  <div className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-brand text-white text-xl font-bold shadow-lg">
-                    {String(step.step).padStart(2, "0")}
+                  {/* Step circle */}
+                  <div className="relative z-10 mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-brand text-white shadow-lg">
+                    <Icon className="h-8 w-8" />
                   </div>
 
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-orange/10 dark:bg-brand-orange/20">
-                    <Icon className="h-7 w-7 text-brand-orange" />
-                  </div>
+                  {/* Step number */}
+                  <span className="text-xs font-bold text-brand-orange dark:text-brand-yellow uppercase tracking-widest mb-2">
+                    Bước {step.step}
+                  </span>
 
-                  <h3 className="text-lg font-semibold mb-2 dark:text-white">
+                  <h3 className="text-lg font-bold mb-2 dark:text-white">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-text-secondary dark:text-gray-400 max-w-[200px]">
+                  <p className="text-sm text-text-secondary dark:text-gray-400 max-w-[220px] leading-relaxed">
                     {step.description}
                   </p>
                 </ScrollRevealItem>
