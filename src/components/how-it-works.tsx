@@ -15,7 +15,7 @@ export function HowItWorks() {
             <span className="text-gradient">đơn giản</span>
           </h2>
           <p className="mt-3 text-text-secondary dark:text-gray-400 max-w-lg mx-auto">
-            Chỉ 3 bước để bắt đầu tiết kiệm với Ting Ting
+            Chỉ 3 bước để bắt đầu tiết kiệm với Vn Ting Ting
           </p>
         </ScrollReveal>
 

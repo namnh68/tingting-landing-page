@@ -12,13 +12,13 @@ export function CTAFinal() {
               Sẵn sàng tiết kiệm?
             </h2>
             <p className="text-white/90 text-lg mb-8 max-w-md mx-auto">
-              Tham gia nhóm Zalo Ting Ting ngay — hơn 100 người đã tiết kiệm cùng chúng tôi!
+              Tham gia nhóm Zalo Vn Ting Ting ngay — hơn 100 người đã tiết kiệm cùng chúng tôi!
             </p>
 
             <div className="inline-block rounded-2xl bg-white p-5 shadow-lg mb-6">
               <Image
                 src="/qr-code.jpg"
-                alt="QR Code nhóm Zalo Ting Ting"
+                alt="QR Code nhóm Zalo Vn Ting Ting"
                 width={200}
                 height={200}
                 className="rounded-lg"

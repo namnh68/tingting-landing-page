@@ -40,7 +40,7 @@ export function Hero() {
             <div className="relative rounded-2xl bg-white p-6 shadow-2xl dark:bg-dark-secondary">
               <Image
                 src="/qr-code.jpg"
-                alt="QR Code nhóm Zalo Ting Ting"
+                alt="QR Code nhóm Zalo Vn Ting Ting"
                 width={280}
                 height={280}
                 className="rounded-xl"

@@ -42,7 +42,7 @@ export function Header() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="text-xl font-bold text-gradient">
-            Ting Ting
+            Vn Ting Ting
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">

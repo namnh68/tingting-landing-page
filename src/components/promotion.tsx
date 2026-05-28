@@ -29,7 +29,7 @@ export function Promotion() {
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold dark:text-white">
             Tại sao chọn{" "}
-            <span className="text-gradient">Ting Ting?</span>
+            <span className="text-gradient">Vn Ting Ting?</span>
           </h2>
         </ScrollReveal>
 

@@ -127,7 +127,7 @@ export function FeedbackScreenshots() {
             <span className="text-gradient">thực tế</span>
           </h2>
           <p className="mt-3 text-text-secondary dark:text-gray-400">
-            Ảnh chụp màn hình thật từ thành viên nhóm Ting Ting
+            Ảnh chụp màn hình thật từ thành viên nhóm Vn Ting Ting
           </p>
         </ScrollReveal>
 

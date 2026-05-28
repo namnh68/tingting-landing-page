@@ -7,31 +7,31 @@
 /* === Custom Theme Tokens (Tailwind v4 CSS-first config) === */
 @theme {
   /* Font family */
-  --font-sans: var(--font-be-vietnam-pro), "Be Vietnam Pro", system-ui, sans-serif;
+  --font-sans: var(--font-nunito), "Nunito", system-ui, sans-serif;
 
-  /* Brand colors */
-  --color-brand-orange: #FF6B35;
-  --color-brand-yellow: #F7931E;
-  --color-brand-red: #E63946;
+  /* Brand colors — Rose Gold & Purple */
+  --color-brand-orange: #DB2777;   /* rose — light mode primary */
+  --color-brand-yellow: #F472B6;   /* pink-400 — dark mode accent/primary */
+  --color-brand-red: #EF4444;
 
   /* Light theme surface colors */
-  --color-surface-primary: #FFFFFF;
-  --color-surface-secondary: #F8FAFC;
-  --color-surface-tertiary: #F1F5F9;
+  --color-surface-primary: #FFF5F7;
+  --color-surface-secondary: #FCE7F3;
+  --color-surface-tertiary: #FDF2F8;
 
   /* Dark theme surface colors */
-  --color-dark-primary: #0F172A;
-  --color-dark-secondary: #1E293B;
-  --color-dark-tertiary: #334155;
+  --color-dark-primary: #0D0A1A;
+  --color-dark-secondary: #1A1525;
+  --color-dark-tertiary: #2D2440;
 
   /* Text colors */
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #475569;
-  --color-text-muted: #94A3B8;
+  --color-text-primary: #1C1C2E;
+  --color-text-secondary: #75758a;
+  --color-text-muted: #9CA3AF;
 
   /* Gradient stops */
-  --color-gradient-start: #FF6B35;
-  --color-gradient-end: #F7931E;
+  --color-gradient-start: #DB2777;
+  --color-gradient-end: #9333EA;
 }
 
 /* === Global Styles === */
@@ -45,12 +45,12 @@
   }
 
   .dark body {
-    background-color: #0F172A;
-    color: #E2E8F0;
+    background-color: #0D0A1A;
+    color: #F9FAFB;
   }
 
   ::selection {
-    background-color: #FF6B35;
+    background-color: #DB2777;
     color: white;
   }
 }
@@ -58,14 +58,14 @@
 /* === Custom Utilities === */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(to right, #FF6B35, #F7931E);
+    background: linear-gradient(to right, #DB2777, #9333EA);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .bg-gradient-brand {
-    background: linear-gradient(to right, #FF6B35, #F7931E);
+    background: linear-gradient(to right, #DB2777, #9333EA);
   }
 }
 
