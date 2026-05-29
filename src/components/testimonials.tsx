@@ -61,10 +61,10 @@ export function Testimonials() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold dark:text-white">
-            Hơn 100 người đã <span className="text-gradient">tiết kiệm</span>
+            Hơn 1000 người đã <span className="text-gradient">tiết kiệm</span>
           </h2>
           <p className="mt-3 text-text-secondary dark:text-gray-400">
-            Feedback thực từ thành viên trong nhóm
+            Phản hồi từ thành viên trong nhóm
           </p>
         </ScrollReveal>
 

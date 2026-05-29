@@ -60,7 +60,7 @@ export function Hero() {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] dark:text-white">
-              Hoàn <span className="text-gradient">80% hoa hồng</span>{" "}
+              Hoàn lên đến <span className="text-gradient">80% hoa hồng</span>{" "}
               mỗi đơn hàng online
             </h1>
 
@@ -96,7 +96,7 @@ export function Hero() {
                 priority
               />
               <p className="mt-5 text-sm font-medium text-text-secondary dark:text-gray-400">
-                Quét mã QR để vào nhóm Zalo
+                Quét mã bằng Zalo để vào nhóm
               </p>
               <a
                 href={ZALO_GROUP_LINK}

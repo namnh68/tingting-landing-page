@@ -5,7 +5,7 @@ const COMPARISON_ROWS = [
   {
     feature: "Hoàn tiền",
     normal: "Không có",
-    tingting: "Hoàn 80% hoa hồng",
+    tingting: "Hoàn lên đến 80% hoa hồng",
     normalBad: true,
   },
   {

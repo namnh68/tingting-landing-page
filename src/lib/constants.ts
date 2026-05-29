@@ -2,7 +2,7 @@ export const ZALO_GROUP_LINK = "https://zalo.me/g/icqgkh803";
 export const ZALO_PERSONAL_LINK = "https://zalo.me/0989210393";
 
 export const STATS = {
-  members: { value: 150, suffix: "+", label: "Thành viên tin tưởng" },
+  members: { value: 1000, suffix: "+", label: "Thành viên tin tưởng" },
   orders: { value: 10000, suffix: "+", label: "Đơn hàng hoàn tiền thành công" },
   refunded: { value: 20, suffix: " triệu+", label: "VND đã hoàn cho thành viên hàng tháng" },
 } as const;
