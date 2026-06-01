@@ -13,6 +13,10 @@ const nunito = Nunito({
 const SITE_URL = "https://tingting.vercel.app";
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.jpg",
+    apple: "/favicon.jpg",
+  },
   title: "VnTing - Săn deal hời - Hoàn hoa hồng | Hoàn tiền Shopee, TikTok Shop",
   description:
     "Tham gia nhóm Zalo VnTing để nhận hoàn tiền lên đến 80% hoa hồng khi mua sắm trên Shopee và TikTok Shop. Miễn phí, an toàn, tự động.",
