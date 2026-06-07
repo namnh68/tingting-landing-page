@@ -14,8 +14,8 @@ const SITE_URL = "https://tingting.vercel.app";
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/favicon.jpg",
-    apple: "/favicon.jpg",
+    icon: "/icon.svg",
+    apple: "/icon.svg",
   },
   title: "VnTing - Săn deal hời - Hoàn hoa hồng | Hoàn tiền Shopee, TikTok Shop",
   description:
