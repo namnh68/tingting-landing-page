@@ -30,7 +30,7 @@ export const NAV_ITEMS = [
   { label: "So sánh", href: "/#comparison" },
   { label: "Đánh giá", href: "/#testimonials" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Bài viết", href: "/bai-viet" },
+  { label: "Bài viết", href: "/blogs" },
 ] as const;
 
 export const FAQ_ITEMS = [

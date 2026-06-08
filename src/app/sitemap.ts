@@ -7,7 +7,7 @@ const SITE_URL = "https://tingting.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts().map((post) => ({
-    url: `${SITE_URL}/bai-viet/${post.slug}`,
+    url: `${SITE_URL}/blogs/${post.slug}`,
     lastModified: post.date ? new Date(post.date) : new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${SITE_URL}/bai-viet`,
+      url: `${SITE_URL}/blogs`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,

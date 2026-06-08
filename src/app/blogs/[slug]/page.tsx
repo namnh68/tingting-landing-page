@@ -30,7 +30,7 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.description,
-      url: `${SITE_URL}/bai-viet/${post.slug}`,
+      url: `${SITE_URL}/blogs/${post.slug}`,
       siteName: "VnTing",
       locale: "vi_VN",
       type: "article",
@@ -66,7 +66,7 @@ export default async function PostPage({
     datePublished: post.date,
     author: { "@type": "Organization", name: "VnTing" },
     publisher: { "@type": "Organization", name: "VnTing", url: SITE_URL },
-    url: `${SITE_URL}/bai-viet/${post.slug}`,
+    url: `${SITE_URL}/blogs/${post.slug}`,
     ...(post.image && { image: `${SITE_URL}${post.image}` }),
   };
 
@@ -81,7 +81,7 @@ export default async function PostPage({
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
           {/* Back link */}
           <Link
-            href="/bai-viet"
+            href="/blogs"
             className="mb-6 inline-flex items-center gap-1 text-sm text-text-secondary dark:text-gray-400 hover:text-brand-orange dark:hover:text-brand-yellow transition-colors"
           >
             ← Tất cả bài viết
@@ -144,7 +144,7 @@ export default async function PostPage({
           {/* Footer nav */}
           <div className="mt-12 border-t border-surface-secondary dark:border-dark-tertiary pt-8 text-center">
             <Link
-              href="/bai-viet"
+              href="/blogs"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-2.5 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
             >
               ← Xem tất cả bài viết

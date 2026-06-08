@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bài viết - VnTing",
     description: "Hướng dẫn mua sắm thông minh, hoàn tiền hoa hồng Shopee và TikTok Shop.",
-    url: `${SITE_URL}/bai-viet`,
+    url: `${SITE_URL}/blogs`,
     siteName: "VnTing",
     locale: "vi_VN",
     type: "website",
@@ -54,7 +54,7 @@ export default function PostsPage() {
               {posts.map((post) => (
                 <Link
                   key={post.slug}
-                  href={`/bai-viet/${post.slug}`}
+                  href={`/blogs/${post.slug}`}
                   className="group block rounded-2xl border border-surface-secondary dark:border-dark-tertiary bg-white dark:bg-dark-secondary overflow-hidden shadow-sm hover:shadow-md transition-shadow"
                 >
                   {post.image && (

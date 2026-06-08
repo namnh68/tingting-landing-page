@@ -15,7 +15,7 @@ export interface Post extends PostMeta {
   content: string;
 }
 
-const postsDir = path.join(process.cwd(), "content/bai-viet");
+const postsDir = path.join(process.cwd(), "content/blogs");
 
 // Accepts tags as array or comma-separated string
 function normalizeTags(raw: unknown): string[] | undefined {

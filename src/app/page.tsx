@@ -6,6 +6,7 @@ import { Comparison } from "@/components/comparison";
 import { Testimonials } from "@/components/testimonials";
 import { FeedbackScreenshots } from "@/components/feedback-screenshots";
 import { FAQ } from "@/components/faq";
+import { BlogPreview } from "@/components/blog-preview";
 import { Promotion } from "@/components/promotion";
 import { CTAFinal } from "@/components/cta-final";
 import { Footer } from "@/components/footer";
@@ -25,6 +26,7 @@ export default function Home() {
         <FeedbackScreenshots />
         <FAQ />
         <Promotion />
+        <BlogPreview />
         <CTAFinal />
       </main>
       <Footer />
