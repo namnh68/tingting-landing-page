@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     icon: "/icon.svg",
     apple: "/icon.svg",
   },
-  title: "VnTing - Săn deal hời - Hoàn hoa hồng | Hoàn tiền Shopee, TikTok Shop",
+  title: "VnTing - Hệ thống hoàn tiền hoa hồng Shopee, TikTok Shop, Lazada",
   description:
     "Tham gia nhóm Zalo VnTing để nhận hoàn tiền lên đến 80% hoa hồng khi mua sắm trên Shopee và TikTok Shop. Miễn phí, an toàn, tự động.",
   keywords: [

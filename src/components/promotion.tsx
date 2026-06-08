@@ -17,7 +17,7 @@ const BENEFITS = [
   {
     icon: FiZap,
     title: "Tự động & nhanh chóng",
-    description: "Bot xử lý tự động 24/7, trả link có hoa hồng ngay lập tức.",
+    description: "Bot xử lý tự động 24/7, trả link, kiểm tra đơn hàng, số dư tài khoản ngay lập tức.",
     gradient: "from-amber-500 to-orange-600",
   },
 ];

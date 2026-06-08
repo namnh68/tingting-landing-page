@@ -2,7 +2,7 @@ export const ZALO_GROUP_LINK = "https://zalo.me/g/icqgkh803";
 export const ZALO_PERSONAL_LINK = "https://zalo.me/0989210393";
 
 export const STATS = {
-  members: { value: 1000, suffix: "+", label: "Thành viên tin tưởng" },
+  members: { value: 500, suffix: "+", label: "Thành viên tin tưởng" },
   orders: { value: 10000, suffix: "+", label: "Đơn hàng hoàn tiền thành công" },
   refunded: { value: 20, suffix: " triệu+", label: "VND đã hoàn cho thành viên hàng tháng" },
 } as const;
@@ -64,9 +64,16 @@ export const TESTIMONIALS = [
 {
     name: "Khánh An",
     content:
-      "Mua điện thoại 10 triệu, được hoàn lại gần 300k. Chỉ cần gửi link là xong, dễ quá!",
-    orderAmount: "10,000,000đ",
+      "Mua điện thoại 5 triệu, được hoàn lại gần 300k. Chỉ cần gửi link là xong, dễ quá!",
+    orderAmount: "5,000,000đ",
     refundAmount: "~300,000đ",
+  },
+  {
+    name: "Bùi Ngọc",
+    content:
+      "Bot trả link ngay tức thì, không phải chờ đợi. Bot còn hỗ trợ kiểm tra đơn hàng, số dư tài khoản và chủ động rút tiền. Rất công nghệ và tiện lợi.",
+    orderAmount: "",
+    refundAmount: "",
   },
   {
     name: "Hồng Anh",
@@ -76,9 +83,9 @@ export const TESTIMONIALS = [
     refundAmount: "~1,000,000đ",
   },
   {
-    name: "Bùi Ngọc",
+    name: "Khánh Linh",
     content:
-      "Bot trả link ngay tức thì, không phải chờ đợi. Rất tiện lợi!",
+      "Admin hỗ trợ nhiệt tình, thân thiện. Và hay được nhận thông báo Deal hời, mã giảm giá từ Admin. Quy trình đơn hàng, hoàn tiền minh bạch. Rất đáng tham gia!",
     orderAmount: "",
     refundAmount: "",
   },
@@ -96,7 +103,7 @@ export const FEEDBACK_IMAGES = [
     caption: "Hoàn tiền hoa hồng",
   },
   {
-    src: "/images/feedback/feedback-03.jpg",
+    src: "/images/feedback/feedback-03.png",
     alt: "Thành viên chia sẻ trải nghiệm nhóm VnTing",
     caption: "Bot gửi link cho thành viên",
   },
