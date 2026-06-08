@@ -6,6 +6,32 @@ import { ThemeToggle } from "./theme-toggle";
 import { ZALO_GROUP_LINK, NAV_ITEMS } from "@/lib/constants";
 import { FiMenu, FiX } from "react-icons/fi";
 
+function NavLink({
+  href,
+  className,
+  onClick,
+  children,
+}: {
+  href: string;
+  className: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+}) {
+  // Hash links stay on the same page; page routes use Next.js Link for SPA nav
+  if (href.startsWith("/#")) {
+    return (
+      <a href={href} className={className} onClick={onClick}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -47,13 +73,13 @@ export function Header() {
 
           <nav className="hidden md:flex items-center gap-6">
             {NAV_ITEMS.map((item) => (
-              <a
+              <NavLink
                 key={item.href}
                 href={item.href}
                 className="text-sm text-text-secondary hover:text-brand-orange transition-colors dark:text-gray-300 dark:hover:text-brand-yellow"
               >
                 {item.label}
-              </a>
+              </NavLink>
             ))}
           </nav>
 
@@ -91,14 +117,14 @@ export function Header() {
         >
           <nav className="flex flex-col gap-1 px-4 py-3">
             {NAV_ITEMS.map((item) => (
-              <a
+              <NavLink
                 key={item.href}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
                 className="py-2.5 text-sm text-text-secondary hover:text-brand-orange transition-colors dark:text-gray-300 dark:hover:text-brand-yellow"
               >
                 {item.label}
-              </a>
+              </NavLink>
             ))}
             <a
               href={ZALO_GROUP_LINK}
