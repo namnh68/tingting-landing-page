@@ -29,7 +29,7 @@ export const NAV_ITEMS = [
   { label: "Cách hoạt động", href: "/#how-it-works" },
   { label: "So sánh", href: "/#comparison" },
   { label: "Đánh giá", href: "/#testimonials" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Hỏi đáp", href: "/#faq" },
   { label: "Bài viết", href: "/blogs" },
 ] as const;
 
@@ -37,7 +37,7 @@ export const FAQ_ITEMS = [
   {
     question: "Dịch vụ này là gì và tại sao tôi lại được nhận tiền?",
     answer:
-      "Là mô hình hoàn tiền hoa hồng. Bạn mua hàng qua link có mã Aff của chúng tôi, chúng tôi nhận hoa hồng của sản phẩm bạn đã mua từ sàn (Shopee/TikTok), sau đó chia lại 80% số tiền đó cho bạn.",
+      "Mỗi đơn hàng trên Shopee, TikTok Shop… vốn đã có sẵn một khoản hoa hồng tiếp thị mà sàn và người bán trả cho bên giới thiệu. Khi bạn mua qua VnTing, khoản hoa hồng đó về VnTing, và VnTing chia lại 80% cho bạn. Bạn vẫn mua đúng shop, đúng giá — không phát sinh thêm chi phí nào. .",
   },
   {
     question: "Tiền hoa hồng có phải là tiền chênh giá so với thực tế mua hay không?",
