@@ -7,7 +7,7 @@ export const OG_IMAGE_PATH = "/og-image.png"; // TODO: OG_IMAGE_URL — ảnh pr
 
 export const HERO_STATS = [
   { icon: "📅", text: "8 ngày 7 đêm" },
-  { icon: "🛣️", text: "~1.650 km" },
+  { icon: "🛣️", text: "~1.700 km" },
   { icon: "👨‍👩‍👧‍👦", text: "4 thành viên" },
 ] as const;
 
@@ -17,19 +17,19 @@ export type OverviewRow = {
   date: string; // "20/6 · T7"
   route: string;
   highlight: string;
-  km: string; // "~475"
+  km: string; // "~510"
   sleep: string; // "🌙 Đồng Hới"
 };
 
 export const OVERVIEW: OverviewRow[] = [
-  { n: 1, date: "20/6 · T7", route: "Hà Nội → Thiên Cầm → Đồng Hới", highlight: "Cao tốc, biển Thiên Cầm, ven biển Cửa Nhượng–Kỳ Xuân, hải sản Bao Cấp 1994, biển Nhật Lệ", km: "~475", sleep: "🌙 Đồng Hới" },
+  { n: 1, date: "20/6 · T7", route: "Hà Nội → Thiên Cầm → Đồng Hới", highlight: "Cao tốc, biển Thiên Cầm, ven biển Cửa Nhượng–Kỳ Xuân, hải sản Bao Cấp 1994, biển Nhật Lệ", km: "~510", sleep: "🌙 Đồng Hới" },
   { n: 2, date: "21/6 · CN", route: "Đồng Hới → Huế (ven biển Quảng Trị)", highlight: "Đặc sản Đồng Hới, cánh đồng điện gió Lệ Thủy, hải sản Cửa Tùng, Thành cổ QT – Vĩ tuyến 17, phố đêm Huế", km: "~195", sleep: "🌙 Huế" },
   { n: 3, date: "22/6 · T2", route: "Huế → An Bàng / Hội An", highlight: "Đại Nội Huế, đèo Hải Vân – Hải Vân Quan, biển An Bàng, phố cổ Hội An", km: "~130", sleep: "🌙 An Bàng" },
-  { n: 4, date: "23/6 · T3", route: "Hội An → Đà Nẵng", highlight: "Biển An Bàng, rừng dừa Bảy Mẫu, Ngũ Hành Sơn, biển Mỹ Khê – Cầu Rồng", km: "~40", sleep: "🌙 Đà Nẵng" },
+  { n: 4, date: "23/6 · T3", route: "Hội An → Đà Nẵng", highlight: "Biển An Bàng, rừng dừa Bảy Mẫu, Ngũ Hành Sơn, biển Mỹ Khê – Cầu Rồng", km: "~45", sleep: "🌙 Đà Nẵng" },
   { n: 5, date: "24/6 · T4", route: "Đà Nẵng (trọn ngày)", highlight: "Bán đảo Sơn Trà – Chùa Linh Ứng, tắm biển, chợ Hàn mua quà", km: "~40", sleep: "🌙 Đà Nẵng" },
   { n: 6, date: "25/6 · T5", route: "Đà Nẵng → Huế", highlight: "Sáng thư giãn Đà Nẵng, hầm Hải Vân – Lăng Cô, chiều tối khám phá Huế", km: "~100", sleep: "🌙 Huế" },
   { n: 7, date: "26/6 · T6", route: "Huế → Cửa Lò (Nghệ An)", highlight: "Cao tốc, chiều tắm biển Cửa Lò / VinWonders Cửa Hội, súp lươn xứ Nghệ", km: "~370", sleep: "🌙 Cửa Lò" },
-  { n: 8, date: "27/6 · T7", route: "Cửa Lò → Hà Nội", highlight: "Cao tốc toàn tuyến, mua quà xứ Nghệ, về HN đầu giờ chiều", km: "~300", sleep: "🏠 Về nhà" },
+  { n: 8, date: "27/6 · T7", route: "Cửa Lò → Hà Nội", highlight: "Cao tốc toàn tuyến, mua quà xứ Nghệ, về HN đầu giờ chiều", km: "~310", sleep: "🏠 Về nhà" },
 ];
 
 // ---- Lưu ý chung cả chuyến ----
@@ -63,7 +63,7 @@ export const DAYS: Day[] = [
     tag: "T7 · 20/6",
     chip: "Ngày 1 · Đồng Hới",
     title: "Hà Nội → Thiên Cầm → Đồng Hới (Quảng Bình)",
-    meta: "~475 km · đi sớm 5h30 · chiều đi: cao tốc → Thiên Cầm → đường ven biển · Nghỉ đêm: Đồng Hới",
+    meta: "~510 km · đi sớm 5h30 · chiều đi: cao tốc → Thiên Cầm → đường ven biển · Nghỉ đêm: Đồng Hới",
     slots: [
       { label: "🌅 Sáng", rows: [
         { time: "05:30", act: "Xuất phát Hà Nội, đi cao tốc Bắc–Nam (Pháp Vân–Cầu Giẽ → Cao Bồ–Mai Sơn → Mai Sơn–QL45 → Nghi Sơn–Diễn Châu → Diễn Châu–Bãi Vọt → Bãi Vọt–Hàm Nghi), xuống nút giao Cẩm Quan (Cẩm Xuyên, Hà Tĩnh).", eat: "Đổ đầy xăng tối hôm trước; đồ ăn nhẹ, sữa cho bé", note: "Đi sớm để né nắng & kịp lịch. Ăn sáng tại trạm dừng cao tốc. Che bạt kính khi dừng.", km: "HN → Thiên Cầm ~380 km" },
@@ -75,7 +75,7 @@ export const DAYS: Day[] = [
         { time: "12:15", act: "Ăn trưa + nghỉ tại Nhà hàng Hải sản Bao Cấp 1994 (ngay bãi Kỳ Xuân). Ăn xong nằm võng nghỉ ~30–45 phút.", map: "https://maps.app.goo.gl/L4fzG6E27mX1ppxcA", eat: "Hải sản tươi: ghẹ, mực, tôm, cá (~200–400k/người) · Bao Cấp 1994 – 0358571276", note: "Dự phòng: Hải sản Dân Hường 0919973458." },
       ] },
       { label: "🌤️ Chiều", rows: [
-        { time: "14:15", act: "Kỳ Xuân → Đồng Hới: qua Kỳ Anh – Đèo Ngang (cung QL1A/ven biển, cảnh đẹp). Có thể ra lại cao tốc nếu muốn nhanh.", note: "Đèo Ngang ngắn, cảnh đẹp.", km: "~95 km" },
+        { time: "14:15", act: "Kỳ Xuân → Đồng Hới: qua Kỳ Anh – Đèo Ngang (cung QL1A/ven biển, cảnh đẹp). Có thể ra lại cao tốc nếu muốn nhanh.", note: "Đèo Ngang ngắn, cảnh đẹp.", km: "~105 km" },
         { time: "16:30", act: "Nhận phòng khách sạn (gần biển Nhật Lệ / Bảo Ninh). Tắm rửa, thay đồ.", note: "Che bạt kính khi gửi xe. Đặt phòng trước (T7 cao điểm)." },
         { time: "17:00", act: "Tắm biển Nhật Lệ (chiều mát, ánh sáng đẹp). Có ghế + ô cho thuê.", map: "Bãi biển Nhật Lệ Đồng Hới", note: "Áo phao cho bé lớp 2. Bé 1 tuổi chỉ nghịch cát/mép nước. Ghế 25k, tắm nước ngọt 8k." },
       ] },
@@ -104,10 +104,11 @@ export const DAYS: Day[] = [
       ] },
       { label: "🌤️ Chiều", rows: [
         { time: "13:15", act: "Tham quan lịch sử: Vĩ tuyến 17 – Cầu Hiền Lương (đôi bờ Bến Hải) & Thành cổ Quảng Trị.", map: "Cầu Hiền Lương Vĩ tuyến 17 Quảng Trị", note: "Điểm lịch sử ý nghĩa. Đi nhẹ nhàng vì trưa nắng; mang mũ, nước.", km: "~30 km" },
-        { time: "14:30", act: "Quảng Trị → Huế. Nhận phòng khách sạn, nghỉ ngơi cho bé.", km: "~65 km" },
+        { time: "14:30", act: "Quảng Trị → Huế. Nhận phòng khách sạn, nghỉ ngơi cho bé.", km: "~60 km" },
+        { time: "16:30", act: "Ăn chè Thanh — phố Mai Thúc Loan, Huế.", map: "https://maps.app.goo.gl/Czw5KYagqXLFYPxb6", eat: "Chè Huế nhiều loại, món tráng miệng chiều mát." },
       ] },
       { label: "🌙 Tối", rows: [
-        { time: "18:00", act: "Ăn tối đặc sản + khám phá Huế về đêm: phố đi bộ Nguyễn Đình Chiểu, cầu gỗ lim sông Hương, chợ đêm.", eat: "Bún bò Huế (phố Tây) · bánh bèo–nậm–lọc Quán Hạnh – 11–15 Phó Đức Chính · chè hẻm Hùng Vương", note: "Tối Huế mát, dễ chịu. Dùng xe đẩy cho bé 1 tuổi." },
+        { time: "18:00", act: "Ăn tối Bún bò Huế Bà Nga (đường Nguyễn Chí Diểu) — bún bò rất ngon. Sau đó dạo Huế về đêm: phố đi bộ Nguyễn Đình Chiểu, cầu gỗ lim sông Hương, chợ đêm.", map: "https://maps.app.goo.gl/tkJ1oBM6ZPG2Uv74A", eat: "Bún bò Huế Bà Nga – đường Nguyễn Chí Diểu", note: "Tối Huế mát, dễ chịu. Dùng xe đẩy cho bé 1 tuổi." },
       ] },
     ],
     hotel: "Ngủ Huế (600k–2tr): Gardenia (phố đi bộ) · Rosaleen Boutique (hồ bơi, cách sông Hương 5') · Kinh Kỳ · Alba Spa / Thanh Lịch Royal.",
@@ -120,7 +121,7 @@ export const DAYS: Day[] = [
     meta: "~130 km · lái ~3h (đường đèo) · xuất phát 8h · Nghỉ đêm: An Bàng",
     slots: [
       { label: "🌅 Sáng", rows: [
-        { time: "08:00", act: "Ăn sáng đặc sản Huế.", eat: "Bánh mì Trường Tiền – O Tho · bún bò Mệ Kéo – 20 Bạch Đằng · bún bò Bà Tuyết – 47 Nguyễn Công Trứ" },
+        { time: "08:00", act: "Ăn sáng bánh mì Trường Tiền – O Tho.", eat: "Bánh mì Trường Tiền – O Tho" },
         { time: "08:30", act: "Tham quan Đại Nội Huế (Hoàng thành). Đi sớm khi còn mát, thuê xe điện trong khu di tích cho đỡ mỏi chân với bé.", map: "Đại Nội Huế", note: "Vé 2026: người lớn 200k; bé 7–12 tuổi 40k; dưới 7 tuổi miễn phí. Mở cửa từ 7h." },
         { time: "11:00", act: "Về khách sạn trả phòng." },
       ] },
@@ -142,7 +143,7 @@ export const DAYS: Day[] = [
     tag: "T3 · 23/6",
     chip: "Ngày 4 · Đà Nẵng",
     title: "Hội An → Đà Nẵng",
-    meta: "~40 km · lái ~1h · xuất phát 8h · Nghỉ đêm: Đà Nẵng",
+    meta: "~45 km · lái ~1h · xuất phát 8h · Nghỉ đêm: Đà Nẵng",
     slots: [
       { label: "🌅 Sáng", rows: [
         { time: "06:30", act: "(Tùy chọn – 1 người) Đi chợ An Bàng buổi sáng mua hải sản tươi, cà phê view biển.", note: "Không bắt buộc; cả nhà có thể ngủ thêm." },
@@ -151,11 +152,11 @@ export const DAYS: Day[] = [
       ] },
       { label: "☀️ Trưa", rows: [
         { time: "11:30", act: "Ăn trưa Hội An trước khi rời đi.", eat: "Cơm gà Giếng Đình – 9 Phan Châu Trinh · Cơm gà Bà Buội · mì Quảng", note: "Trưa Hội An nóng — chọn quán mát." },
-        { time: "12:30", act: "Di chuyển Hội An → Đà Nẵng. Nhận phòng khách sạn gần biển Mỹ Khê.", km: "~30 km" },
+        { time: "12:30", act: "Di chuyển Hội An → Đà Nẵng. Nhận phòng khách sạn gần biển Mỹ Khê.", km: "~28 km" },
         { time: "13:15", act: "Nghỉ trưa tại khách sạn (bé ngủ). Có thể bơi hồ khách sạn.", note: "Nghỉ tránh nắng đỉnh điểm ~35°C." },
       ] },
       { label: "🌤️ Chiều", rows: [
-        { time: "15:30", act: "Ngũ Hành Sơn (Thủy Sơn): chùa, hang động, view thành phố. Đi thang máy lên cho đỡ leo bậc.", map: "Ngũ Hành Sơn Đà Nẵng", note: "Vé 40k; HS 10k; dưới 6 tuổi miễn phí; thang máy 15k/lượt. Đi lúc bớt nóng.", km: "~10 km" },
+        { time: "15:30", act: "Ngũ Hành Sơn (Thủy Sơn): chùa, hang động, view thành phố. Đi thang máy lên cho đỡ leo bậc.", map: "Ngũ Hành Sơn Đà Nẵng", note: "Vé 40k; HS 10k; dưới 6 tuổi miễn phí; thang máy 15k/lượt. Đi lúc bớt nóng.", km: "~8 km" },
       ] },
       { label: "🌙 Tối", rows: [
         { time: "17:30", act: "Hoàng hôn biển Mỹ Khê (một trong những bãi đẹp nhất). Dạo chơi, bé nghịch cát.", map: "Bãi biển Mỹ Khê Đà Nẵng", note: "Bãi miễn phí, ghế 50–100k." },
@@ -246,7 +247,7 @@ export const DAYS: Day[] = [
     tag: "T7 · 27/6",
     chip: "Ngày 8 · Về HN",
     title: "Cửa Lò → Hà Nội (về nhà)",
-    meta: "~300 km · lái ~4,5h · ưu tiên cao tốc toàn tuyến · xuất phát 8h · về HN đầu giờ chiều",
+    meta: "~310 km · lái ~4,5h · ưu tiên cao tốc toàn tuyến · xuất phát 8h · về HN đầu giờ chiều",
     slots: [
       { label: "🌅 Sáng", rows: [
         { time: "06:30", act: "(Tùy chọn) Tắm biển Cửa Lò buổi sáng sớm lần cuối.", note: "Biển sáng vắng, mát." },
@@ -258,7 +259,7 @@ export const DAYS: Day[] = [
         { time: "11:30", act: "Ăn trưa khu vực Thanh Hóa / Ninh Bình (gần nút giao cao tốc). Nghỉ ngơi cho bé.", eat: "Cơm / bún – gần nút giao cao tốc", note: "Dừng ~15–20 phút rồi đi tiếp.", km: "~150 km" },
       ] },
       { label: "🌤️ Chiều", rows: [
-        { time: "13:30", act: "Về tới Hà Nội. Kết thúc hành trình! 🎉", note: "Còn nguyên buổi chiều nghỉ ngơi. Rửa xe hôm sau.", km: "~150 km" },
+        { time: "13:30", act: "Về tới Hà Nội. Kết thúc hành trình! 🎉", note: "Còn nguyên buổi chiều nghỉ ngơi. Rửa xe hôm sau.", km: "~160 km" },
       ] },
     ],
     hotel: "Về nhà.",
@@ -270,7 +271,7 @@ export type FoodCard = { city: string; dish: string; shops: string; note: string
 export const FOOD: FoodCard[] = [
   { city: "Đồng Hới", dish: "Cháo canh (đặc sản sáng)", shops: "Bà Hồng – 51 Nguyễn Hữu Cảnh · Gia Bảo – 08 Lý Thường Kiệt · O Hạnh – 04 Lê Thành Đồng", note: "Chỉ bán sáng, ~6–10h là hết. Sợi bột gạo dai, có chả ram/chả bò." },
   { city: "Đồng Hới", dish: "Hải sản", shops: "Nhàn Bistro · Nhà hàng Hằng · các quán ven biển Bảo Ninh", note: "Tươi, giá hợp lý. Gọi đặt bàn trước buổi tối." },
-  { city: "Huế", dish: "Bún bò Huế", shops: "Bà Tuyết – 47 Nguyễn Công Trứ (6–11h) · Mệ Kéo – 20 Bạch Đằng (6–10h) · các quán phố Tây (tối)", note: "Ngon nhất buổi sáng; nước dùng đậm vị ruốc, sả." },
+  { city: "Huế", dish: "Bún bò Huế", shops: "Bà Nga – Nguyễn Chí Diểu (rất ngon) · Bà Tuyết – 47 Nguyễn Công Trứ (6–11h) · Mệ Kéo – 20 Bạch Đằng (6–10h)", note: "Ngon nhất buổi sáng; nước dùng đậm vị ruốc, sả." },
   { city: "Huế", dish: "Cơm hến", shops: "Bà Cam – Nguyễn Huệ · Thu Hiền – Phan Bội Châu · 17 Hàn Mặc Tử", note: "Món dân dã, cay — gọi ít ớt cho bé." },
   { city: "Huế", dish: "Bánh bèo – nậm – lọc", shops: "Bà Đỏ – 1 Nguyễn Bỉnh Khiêm · Quán Hạnh – 11–15 Phó Đức Chính · Bánh Chi", note: "Quán Hạnh có cả nem lụi, không gian rộng hợp gia đình." },
   { city: "Huế", dish: "Chè Huế", shops: "Hẻm chè Hùng Vương (29 Hùng Vương) · chè Ông Lạc", note: "Tráng miệng buổi tối, nhiều loại chè." },
@@ -315,10 +316,10 @@ export const STAY: StayCard[] = [
 // ---- Đồ đạc (checklist) ----
 export type ChecklistItem = { group: string; text: string };
 export const CHECKLIST: ChecklistItem[] = [
-  { group: "Cho bé 1 tuổi", text: "Sữa, bình sữa, bỉm, khăn ướt, quần áo dự phòng, địu/xe đẩy gọn, thuốc hạ sốt trẻ em, kem hăm, đồ ăn dặm/snack, bình giữ nhiệt, vài món đồ chơi quen thuộc." },
+  { group: "Cho bé 1 tuổi", text: "Sữa, bình sữa, bỉm, khăn ướt, quần áo dự phòng, địu/xe đẩy gọn, thuốc hạ sốt trẻ em, kem hăm, đồ ăn dặm/snack, cháo gói ăn liền, bình giữ nhiệt, vài món đồ chơi quen thuộc." },
   { group: "Cho bé lớp 2", text: "Áo phao vừa size, kính bơi, mũ, dép quai hậu, quần áo bơi, thuốc chống say xe, sách/đồ chơi trên xe." },
   { group: "Chống nắng miền Trung", text: "Kem chống nắng SPF50+, mũ rộng vành, kính râm, ô, áo dài tay chống nắng, bạt che kính lái ô tô (bắt buộc)." },
-  { group: "Trên xe", text: "Thùng đá đựng nước mát + sữa, snack cho chặng xuyên trưa, túi nôn, sạc điện thoại, giá đỡ điện thoại, tiền mặt lẻ (vé, gửi xe), thẻ thu phí cao tốc (ETC)." },
+  { group: "Trên xe", text: "Thùng đá đựng nước mát + sữa, snack/xúc xích cho chặng xuyên trưa, cà phê lon, bò húc, nước điện giải, đệm/giường gấp ô tô (cho trẻ nhỏ nằm ngủ trên xe), túi nôn, sạc điện thoại, giá đỡ điện thoại, tiền mặt lẻ (vé, gửi xe), thẻ thu phí cao tốc (ETC)." },
   { group: "Y tế", text: "Thuốc say xe, hạ sốt (lớn & bé), men tiêu hóa, oresol, dầu gió, băng cá nhân, thuốc dị ứng, nước rửa tay." },
   { group: "Giấy tờ & xe", text: "CCCD, giấy tờ xe, bằng lái, bảo hiểm; kiểm tra lốp/dầu/nước làm mát, đổ đầy xăng trước chặng dài; dán thẻ ETC để đi cao tốc." },
   { group: "Hành lý", text: "Đóng theo từng ngày (mỗi ngày 1 túi) cho gọn xe; chỉ mang 1/2–2/3 quần áo, tận dụng giặt là ở An Bàng/Đà Nẵng." },

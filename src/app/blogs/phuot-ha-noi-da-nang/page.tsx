@@ -12,7 +12,7 @@ const PAGE_PATH = "/blogs/phuot-ha-noi-da-nang";
 
 const TITLE = "Cẩm nang phượt ô tô Hà Nội – Đà Nẵng 8 ngày 7 đêm";
 const DESCRIPTION =
-  "Lịch trình phượt ô tô Hà Nội – Đà Nẵng 8N7Đ cho gia đình: chiều đi ven biển, chiều về cao tốc, ~1.650 km. Điểm nhấn, ăn gì, ngủ đâu từng ngày, kèm checklist sắm đồ trước chuyến đi.";
+  "Lịch trình phượt ô tô Hà Nội – Đà Nẵng 8N7Đ cho gia đình: chiều đi ven biển, chiều về cao tốc, ~1.700 km. Điểm nhấn, ăn gì, ngủ đâu từng ngày, kèm checklist sắm đồ trước chuyến đi.";
 
 export const metadata: Metadata = {
   title: `${TITLE} - VnTing`,

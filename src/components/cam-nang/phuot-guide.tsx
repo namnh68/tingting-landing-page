@@ -347,7 +347,7 @@ export function PhuotGuide() {
                       <td className="px-4 py-3">TỔNG CỘNG</td>
                       <td className="px-4 py-3" />
                       <td className="px-4 py-3" />
-                      <td className="px-4 py-3 text-brand-purple">~1.650</td>
+                      <td className="px-4 py-3 text-brand-purple">~1.700</td>
                       <td className="px-4 py-3">7 đêm</td>
                     </tr>
                   </tbody>
