@@ -23,7 +23,9 @@ const TABS = [
 type TabId = (typeof TABS)[number]["id"];
 
 const mapsUrl = (q: string) =>
-  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+  q.startsWith("http")
+    ? q
+    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 
 function MapLink({ q }: { q: string }) {
   return (
@@ -158,14 +160,24 @@ function ChecklistPanel() {
         link sản phẩm vào nhóm VnTing, vẫn mua đúng shop đúng giá, nhưng được{" "}
         <span className="font-extrabold text-brand-orange">hoàn lại tới 80% hoa hồng</span>{" "}
         của đơn. Gom cả danh sách dưới đây, chắc cũng đủ thêm bữa hải sản ở Kỳ Xuân 🦐
-        <a
-          href={ZALO_GROUP_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-extrabold text-white shadow-md transition-transform hover:scale-105 active:scale-95"
-        >
-          💝 Vào nhóm nhận hoàn tiền →
-        </a>
+        <div className="mt-3 flex flex-col items-start gap-2.5 sm:flex-row sm:items-center">
+          <a
+            href="https://vnting.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-extrabold text-white shadow-md transition-transform hover:scale-105 active:scale-95"
+          >
+            Tìm hiểu thêm tại vnting.com →
+          </a>
+          <a
+            href={ZALO_GROUP_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold text-brand-orange underline underline-offset-4 transition-opacity hover:opacity-80"
+          >
+            Hoặc vào nhóm để bắt đầu mua hàng
+          </a>
+        </div>
       </div>
 
       <div className="mb-4 flex items-center gap-3">
@@ -266,12 +278,6 @@ export function PhuotGuide() {
                 {s.icon} {s.text}
               </span>
             ))}
-            <button
-              onClick={() => changeTab("dodac")}
-              className="rounded-2xl bg-white px-4 py-2 text-[13.5px] font-extrabold text-brand-orange shadow-md transition-transform hover:scale-105 active:scale-95"
-            >
-              💝 Sắm đồ hoàn hoa hồng →
-            </button>
           </div>
         </div>
       </header>
@@ -455,7 +461,7 @@ export function PhuotGuide() {
         {/* ===== Closing CTA (persistent) ===== */}
         <section className="mt-10 overflow-hidden rounded-[22px] bg-gradient-brand px-6 py-9 text-center text-white">
           <h2 className="text-2xl font-extrabold sm:text-3xl">
-            Vì sao sắm đồ đi chơi lại có thể được hoàn tiền?
+            💡 Mẹo tiết kiệm chi phí chuẩn bị trước chuyến đi chơi
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">
             Mỗi đơn hàng trên Shopee, TikTok Shop… vốn đã có sẵn một khoản hoa hồng tiếp
