@@ -45,6 +45,26 @@ export default function PostsPage() {
             </p>
           </div>
 
+          {/* Featured guide */}
+          <Link
+            href="/blogs/phuot-ha-noi-da-nang"
+            className="group mb-8 block overflow-hidden rounded-2xl bg-gradient-brand p-6 sm:p-8 shadow-sm transition-shadow hover:shadow-md"
+          >
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-extrabold uppercase tracking-widest text-white">
+              🚗 Cẩm nang phượt
+            </span>
+            <h2 className="mt-3 text-xl font-extrabold text-white sm:text-2xl">
+              Phượt ô tô Hà Nội ⇌ Đà Nẵng · 8 ngày 7 đêm
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-white/90">
+              Lịch trình gia đình chi tiết từng ngày: chiều đi ven biển, chiều về cao tốc,
+              kèm checklist sắm đồ trước chuyến đi.
+            </p>
+            <span className="mt-4 inline-flex items-center gap-1 text-sm font-extrabold text-white">
+              Đọc cẩm nang →
+            </span>
+          </Link>
+
           {posts.length === 0 ? (
             <p className="text-center text-text-secondary dark:text-gray-400">
               Chưa có bài viết nào.

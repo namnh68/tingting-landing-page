@@ -32,6 +32,9 @@
   /* Gradient stops */
   --color-gradient-start: #DB2777;
   --color-gradient-end: #9333EA;
+
+  /* Purple accent (matches the guide's km chips / secondary highlights) */
+  --color-brand-purple: #9333EA;
 }
 
 /* === Global Styles === */
