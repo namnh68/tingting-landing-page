@@ -10,7 +10,7 @@ const nunito = Nunito({
   display: "swap",
 });
 
-const SITE_URL = "https://tingting.vercel.app";
+const SITE_URL = "https://vnting.com";
 
 export const metadata: Metadata = {
   icons: {

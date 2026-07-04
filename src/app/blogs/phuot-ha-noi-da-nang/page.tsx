@@ -7,7 +7,7 @@ import { OG_IMAGE_PATH } from "@/lib/phuot-data";
 
 export const dynamic = "force-static";
 
-const SITE_URL = "https://tingting.vercel.app";
+const SITE_URL = "https://vnting.com";
 const PAGE_PATH = "/blogs/phuot-ha-noi-da-nang";
 
 const TITLE = "Cẩm nang phượt ô tô Hà Nội – Đà Nẵng 8 ngày 7 đêm";

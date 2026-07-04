@@ -3,7 +3,7 @@
 // tham khảo 2025–2026 — nên kiểm tra lại sát ngày đi.
 
 // === Placeholder: điền thông tin thật ===
-export const OG_IMAGE_PATH = "/og-image.png"; // TODO: OG_IMAGE_URL — ảnh preview riêng cho trang cẩm nang
+export const OG_IMAGE_PATH = "/og-phuot-ha-noi-da-nang.png"; // ảnh preview riêng cho trang cẩm nang (1200×630)
 
 export const HERO_STATS = [
   { icon: "📅", text: "8 ngày 7 đêm" },

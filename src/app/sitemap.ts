@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/posts";
 
 export const dynamic = "force-static";
 
-const SITE_URL = "https://tingting.vercel.app";
+const SITE_URL = "https://vnting.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const posts = getAllPosts().map((post) => ({

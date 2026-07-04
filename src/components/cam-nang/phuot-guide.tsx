@@ -303,8 +303,7 @@ export function PhuotGuide() {
 
       <main ref={panelsRef} className="mx-auto max-w-5xl scroll-mt-28 px-4 py-8 sm:px-6">
         {/* ===== TỔNG QUAN ===== */}
-        {tab === "tongquan" && (
-          <div className="space-y-6">
+        <div className={tab === "tongquan" ? "space-y-6" : "hidden"}>
             <div className="overflow-hidden rounded-[20px] border border-[rgba(219,39,119,0.12)] bg-white shadow-[0_8px_30px_rgba(219,39,119,0.08)]">
               <div className="bg-surface-secondary px-5 py-3.5 text-[15px] font-extrabold tracking-wide text-brand-orange">
                 HÀNH TRÌNH 8 NGÀY — BẤM VÀO TỪNG NGÀY ĐỂ XEM CHI TIẾT
@@ -400,11 +399,9 @@ export function PhuotGuide() {
               </ul>
             </div>
           </div>
-        )}
 
         {/* ===== LỊCH TRÌNH ===== */}
-        {tab === "lichtrinh" && (
-          <div>
+        <div className={tab === "lichtrinh" ? "" : "hidden"}>
             <div className="sticky top-[112px] z-30 -mx-4 mb-5 grid grid-cols-4 gap-1.5 border-b border-[rgba(219,39,119,0.12)] bg-surface-primary/95 px-4 py-2.5 backdrop-blur sm:-mx-6 sm:grid-cols-8 sm:px-6">
               {DAYS.map((d) => {
                 const place = d.chip.split("·")[1]?.trim() ?? "";
@@ -430,11 +427,9 @@ export function PhuotGuide() {
               ))}
             </div>
           </div>
-        )}
 
         {/* ===== QUÁN ĂN ===== */}
-        {tab === "quanan" && (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={tab === "quanan" ? "grid gap-4 sm:grid-cols-2 lg:grid-cols-3" : "hidden"}>
             {FOOD.map((f, i) => (
               <GCard key={i} tag={f.city} title={f.dish}>
                 <p className="text-[13.5px] font-bold text-text-primary">{f.shops}</p>
@@ -442,21 +437,20 @@ export function PhuotGuide() {
               </GCard>
             ))}
           </div>
-        )}
 
         {/* ===== CHỖ NGHỈ ===== */}
-        {tab === "chonghi" && (
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={tab === "chonghi" ? "grid gap-4 sm:grid-cols-2 lg:grid-cols-3" : "hidden"}>
             {STAY.map((s, i) => (
               <GCard key={i} tag={s.area} title={s.name} price={s.price}>
                 <p className="text-[13.5px] font-semibold text-text-secondary">{s.note}</p>
               </GCard>
             ))}
           </div>
-        )}
 
         {/* ===== ĐỒ ĐẠC ===== */}
-        {tab === "dodac" && <ChecklistPanel />}
+        <div className={tab === "dodac" ? "" : "hidden"}>
+          <ChecklistPanel />
+        </div>
 
         {/* ===== Closing CTA (persistent) ===== */}
         <section className="mt-10 overflow-hidden rounded-[22px] bg-gradient-brand px-6 py-9 text-center text-white">

@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 
 export const dynamic = "force-static";
 
-const SITE_URL = "https://tingting.vercel.app";
+const SITE_URL = "https://vnting.com";
 
 export const metadata: Metadata = {
   title: "Bài viết - VnTing",
