@@ -10,7 +10,6 @@ import {
   FOOD,
   STAY,
   CHECKLIST,
-  PDF_ITINERARY_LINK,
   type TRow,
 } from "@/lib/phuot-data";
 
@@ -32,7 +31,7 @@ function MapLink({ q }: { q: string }) {
       href={mapsUrl(q)}
       target="_blank"
       rel="noopener noreferrer"
-      className="ml-1.5 inline-flex items-center gap-0.5 rounded-full bg-surface-secondary px-2 py-0.5 align-middle text-[11px] font-extrabold text-brand-orange transition-colors hover:bg-gradient-brand hover:text-white"
+      className="ml-1.5 inline-flex items-center gap-0.5 rounded-full bg-surface-secondary px-2 py-0.5 align-middle text-[11px] font-extrabold text-brand-orange transition-colors hover:bg-brand-orange hover:text-white"
     >
       <svg viewBox="0 0 24 24" className="h-3 w-3 fill-current">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.7a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4z" />
@@ -79,7 +78,7 @@ function DayCard({ day }: { day: (typeof DAYS)[number] }) {
   return (
     <article
       id={`day-${day.n}`}
-      className="scroll-mt-32 overflow-hidden rounded-[20px] border border-[rgba(219,39,119,0.12)] bg-white shadow-[0_8px_30px_rgba(219,39,119,0.08)]"
+      className="scroll-mt-[240px] overflow-hidden rounded-[20px] border border-[rgba(219,39,119,0.12)] bg-white shadow-[0_8px_30px_rgba(219,39,119,0.08)] sm:scroll-mt-[184px]"
     >
       <div className="flex items-center gap-4 bg-gradient-brand px-5 py-4 text-white sm:px-6">
         <div className="shrink-0 rounded-xl border border-white/30 bg-white/20 px-3 py-2 text-center text-sm font-extrabold leading-tight">
@@ -246,23 +245,19 @@ export function PhuotGuide() {
   return (
     <div className="bg-surface-primary text-text-primary">
       {/* ===== HERO ===== */}
-      <header className="relative overflow-hidden bg-gradient-brand px-5 pb-24 pt-24 text-center text-white sm:pt-28">
-        <span className="pointer-events-none absolute -right-24 -top-40 h-80 w-80 rounded-full bg-white/20 blur-2xl" />
-        <span className="pointer-events-none absolute -bottom-36 -left-20 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
+      <header className="relative overflow-hidden bg-gradient-brand px-5 pb-10 pt-20 text-center text-white sm:pb-12 sm:pt-24">
+        <span className="pointer-events-none absolute -right-24 -top-40 h-72 w-72 rounded-full bg-white/20 blur-2xl" />
+        <span className="pointer-events-none absolute -bottom-32 -left-20 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
         <div className="relative mx-auto max-w-3xl">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest">
             🚗 Family Road Trip · Hè 2026
           </span>
-          <h1 className="mx-auto mt-4 max-w-2xl text-3xl font-extrabold leading-tight sm:text-4xl md:text-[42px]">
+          <h1 className="mx-auto mt-3 max-w-2xl text-[26px] font-extrabold leading-tight sm:text-4xl">
             Lịch trình phượt ô tô
             <span className="block">Hà Nội ⇌ Đà Nẵng</span>
           </h1>
-          <p className="mx-auto mt-3 max-w-2xl text-sm font-semibold text-white/90 sm:text-base">
-            Chiều đi ven biển (Thiên Cầm) · chiều về cao tốc · gia đình 4 người: bố mẹ +
-            bé lớp 2 (~7 tuổi) + bé 1 tuổi · phong cách gia đình, ẩm thực & khám phá.
-          </p>
 
-          <div className="mt-6 flex flex-wrap justify-center gap-2.5">
+          <div className="mt-5 flex flex-wrap justify-center gap-2.5">
             {stats.map((s) => (
               <span
                 key={s.text}
@@ -404,16 +399,24 @@ export function PhuotGuide() {
         {/* ===== LỊCH TRÌNH ===== */}
         {tab === "lichtrinh" && (
           <div>
-            <div className="mb-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
-              {DAYS.map((d) => (
-                <button
-                  key={d.n}
-                  onClick={() => goDay(d.n)}
-                  className="whitespace-nowrap rounded-full border border-[rgba(219,39,119,0.12)] bg-white px-4 py-2 text-[13.5px] font-extrabold text-text-secondary transition-all hover:border-transparent hover:bg-gradient-brand hover:text-white"
-                >
-                  {d.chip}
-                </button>
-              ))}
+            <div className="sticky top-[112px] z-30 -mx-4 mb-5 grid grid-cols-4 gap-1.5 border-b border-[rgba(219,39,119,0.12)] bg-surface-primary/95 px-4 py-2.5 backdrop-blur sm:-mx-6 sm:grid-cols-8 sm:px-6">
+              {DAYS.map((d) => {
+                const place = d.chip.split("·")[1]?.trim() ?? "";
+                return (
+                  <button
+                    key={d.n}
+                    onClick={() => goDay(d.n)}
+                    className="group rounded-xl border border-[rgba(219,39,119,0.12)] bg-white px-1 py-1.5 text-center leading-tight text-text-secondary transition-all hover:border-transparent hover:bg-brand-orange hover:text-white"
+                  >
+                    <span className="block text-[12.5px] font-extrabold text-text-primary group-hover:text-white">
+                      Ngày {d.n}
+                    </span>
+                    <span className="block truncate text-[10.5px] font-semibold">
+                      {place}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
             <div className="space-y-7">
               {DAYS.map((d) => (
@@ -452,29 +455,36 @@ export function PhuotGuide() {
         {/* ===== Closing CTA (persistent) ===== */}
         <section className="mt-10 overflow-hidden rounded-[22px] bg-gradient-brand px-6 py-9 text-center text-white">
           <h2 className="text-2xl font-extrabold sm:text-3xl">
-            Mang theo cẩm nang cho chuyến đi
+            Vì sao sắm đồ đi chơi lại có thể được hoàn tiền?
           </h2>
-          <p className="mx-auto mt-2 max-w-lg text-sm text-white/90 sm:text-base">
-            Tải lịch trình chi tiết để xem offline, và vào nhóm VnTing để hoàn tiền khi
-            sắm đồ chuẩn bị — vẫn mua đúng shop, đúng giá.
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">
+            Mỗi đơn hàng trên Shopee, TikTok Shop… vốn đã có sẵn một khoản hoa hồng tiếp
+            thị mà sàn trả cho bên giới thiệu. Khi bạn mua qua VnTing, khoản hoa hồng đó về
+            VnTing, và VnTing chia lại <span className="font-extrabold">80%</span> cho bạn.
+            Bạn vẫn mua đúng shop, đúng giá — không phát sinh thêm chi phí nào.
+          </p>
+          <p className="mx-auto mt-3 max-w-xl text-sm text-white/85">
+            Cứ thong thả tìm hiểu, thấy hợp lý thì tham gia.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={PDF_ITINERARY_LINK}
-              className="w-full rounded-full bg-white/15 px-6 py-3 text-sm font-bold text-white ring-1 ring-white/40 backdrop-blur transition-colors hover:bg-white/25 sm:w-auto"
+              href="https://vnting.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-full bg-white px-6 py-3 text-sm font-extrabold text-brand-orange shadow-lg transition-transform hover:scale-105 active:scale-95"
             >
-              📄 Tải lịch trình chi tiết (PDF)
+              Tìm hiểu thêm tại vnting.com →
             </a>
             <a
               href={ZALO_GROUP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full rounded-full bg-white px-6 py-3 text-sm font-extrabold text-brand-orange shadow-lg transition-transform hover:scale-105 active:scale-95 sm:w-auto"
+              className="text-sm font-semibold text-white/90 underline underline-offset-4 transition-opacity hover:opacity-80"
             >
-              💝 Vào nhóm VnTing nhận hoàn tiền
+              Hoặc vào nhóm VnTing
             </a>
           </div>
-          <p className="mt-5 text-sm font-medium text-white/85">
+          <p className="mt-6 text-sm font-medium text-white/85">
             Chúc cả nhà một chuyến đi thật vui — và ví bớt xót một chút. 🌊
           </p>
         </section>

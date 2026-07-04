@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
 import { ZALO_GROUP_LINK, NAV_ITEMS } from "@/lib/constants";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -35,6 +36,10 @@ function NavLink({
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  // On inner pages (not the homepage) the header sits over colored heroes, so keep it
+  // solid by default for readable contrast. Homepage keeps its transparent-at-top look.
+  const solid = scrolled || menuOpen || pathname !== "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +65,7 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || menuOpen
+        solid
           ? "bg-white/90 dark:bg-dark-primary/90 backdrop-blur-md shadow-sm"
           : "bg-transparent"
       }`}

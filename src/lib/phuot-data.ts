@@ -3,7 +3,6 @@
 // tham khảo 2025–2026 — nên kiểm tra lại sát ngày đi.
 
 // === Placeholder: điền thông tin thật ===
-export const PDF_ITINERARY_LINK = "#"; // TODO: LINK_PDF — link tải lịch trình chi tiết (PDF)
 export const OG_IMAGE_PATH = "/og-image.png"; // TODO: OG_IMAGE_URL — ảnh preview riêng cho trang cẩm nang
 
 export const HERO_STATS = [
