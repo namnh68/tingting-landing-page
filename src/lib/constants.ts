@@ -16,7 +16,7 @@ export const HOW_IT_WORKS_STEPS = [
   {
     step: 2,
     title: "Gửi link sản phẩm",
-    description: "Sao chép link sản phẩm muốn mua trên Shopee/TikTok Shop/Lazada, gửi vào nhóm Zalo để nhận lại link có hoa hồng.",
+    description: "Sao chép link sản phẩm muốn mua trên Shopee/TikTok, gửi vào nhóm để nhận lại link có hoa hồng.",
   },
   {
     step: 3,

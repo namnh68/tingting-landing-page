@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     locale: "vi_VN",
     url: SITE_URL,
     siteName: "VnTing",
-    title: "VnTing - Hoàn tiền lên đến 80% khi mua sắm Online",
+    title: "VnTing - Nền tảng tiết kiệm tiền khi mua sắm online",
     description:
       "Gửi link sản phẩm vào nhóm Zalo, nhận hoàn 80% hoa hồng affiliate. Miễn phí, tự động, an toàn.",
     images: [
