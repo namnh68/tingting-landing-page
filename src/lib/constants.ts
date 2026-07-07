@@ -10,8 +10,8 @@ export const STATS = {
 export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
-    title: "Tham gia nhóm VnTing Zalo",
-    description: "Vào nhóm Zalo để bot VnTing phục vụ trả link.",
+    title: "Tham gia nhóm VnTing",
+    description: "Vào nhóm Zalo VnTing để gửi link sản phẩm muốn mua.",
   },
   {
     step: 2,
@@ -20,12 +20,12 @@ export const HOW_IT_WORKS_STEPS = [
   },
   {
     step: 3,
-    title: "Mua hàng với link VnTing gửi",
-    description: "Thực hiện mua hàng như bình thường với link VnTing có hoa hồng.",
+    title: "Thực hiện mua hàng",
+    description: "Thực hiện mua hàng như bình thường với link VnTing gửi.",
   },
   {
     step: 4,
-    title: "Nhận hoa hồng",
+    title: "Nhận lại hoa hồng",
     description: "Sau khi mua hàng thành công, VnTing sẽ nhận được hoa hồng từ sàn sau đó chia lại 80% cho bạn.",
   },
 ] as const;

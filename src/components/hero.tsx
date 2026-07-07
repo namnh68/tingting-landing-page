@@ -60,8 +60,8 @@ export function Hero() {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] dark:text-white">
-              <span className="text-gradient">Tiết kiệm</span> tiền khi mua
-              sắm online
+              <span className="text-gradient">Tiết kiệm</span> hơn khi mua
+              sắm Online
             </h1>
 
             {/* Description */}
