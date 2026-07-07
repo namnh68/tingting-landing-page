@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { SiShopee, SiTiktok } from "react-icons/si";
-import { FiGift, FiZap, FiShield } from "react-icons/fi";
+import { FiHelpCircle, FiPlayCircle, FiUsers } from "react-icons/fi";
 import {
   LuShirt, LuSmartphone, LuSparkles, LuHouse,
   LuFootprints, LuGamepad2, LuApple, LuBookOpen,
@@ -23,10 +23,10 @@ const MARQUEE_ITEMS: { label: string; rate: string; Icon: IconType }[] = [
   { label: "Thể thao", rate: "11%", Icon: LuDumbbell },
 ];
 
-const HIGHLIGHTS = [
-  { label: "Miễn phí", Icon: FiGift },
-  { label: "Tự động 24/7", Icon: FiZap },
-  { label: "An toàn", Icon: FiShield },
+const HIGHLIGHTS: { label: string; Icon: IconType; href: string; external?: boolean; highlight?: boolean }[] = [
+  { label: "Tìm hiểu thêm", Icon: FiHelpCircle, href: "#faq" },
+  { label: "Cách hoạt động", Icon: FiPlayCircle, href: "#how-it-works" },
+  { label: "Tham gia ngay", Icon: FiUsers, href: ZALO_GROUP_LINK, external: true, highlight: true },
 ];
 
 export function Hero() {
@@ -60,32 +60,40 @@ export function Hero() {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] dark:text-white">
-              Hoàn lên đến <span className="text-gradient">80% hoa hồng</span>{" "}
-              mỗi đơn hàng online
+              <span className="text-gradient">Tiết kiệm</span> tiền khi mua
+              sắm online
             </h1>
 
             {/* Description */}
             <p className="mt-6 text-lg text-text-secondary dark:text-gray-400 max-w-lg mx-auto md:mx-0 leading-relaxed">
-              Gửi link sản phẩm cần mua — nhận link mua hàng có hoa hồng — mua xong được hoàn tiền. Không mất phí, không rủi ro.
+              Mỗi sản phẩm đều có <strong className="font-semibold text-text-primary dark:text-gray-200">hoa hồng</strong> giới thiệu - Mua trực tiếp,
+              khoản tiền đó sẽ <strong className="font-semibold text-text-primary dark:text-gray-200">không</strong> thuộc về bạn. Mua qua VnTing giúp
+              bạn nhận lại <strong className="font-semibold text-brand-orange dark:text-brand-yellow">80%</strong>.
             </p>
 
             {/* Highlight pills */}
             <div className="mt-7 flex flex-wrap items-center justify-center md:justify-start gap-2.5">
-              {HIGHLIGHTS.map(({ label, Icon }) => (
-                <span
+              {HIGHLIGHTS.map(({ label, Icon, href, external, highlight }) => (
+                <a
                   key={label}
-                  className="inline-flex items-center gap-1.5 rounded-full bg-surface-secondary dark:bg-dark-tertiary px-4 py-2 text-sm font-medium text-text-primary dark:text-gray-200"
+                  href={href}
+                  {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className={
+                    highlight
+                      ? "animate-pill-breathe inline-flex items-center gap-1.5 rounded-full bg-gradient-brand px-4 py-2 text-[1.05rem] font-bold text-white shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                      : "inline-flex items-center gap-1.5 rounded-full bg-surface-secondary dark:bg-dark-tertiary px-4 py-2 text-[1.05rem] font-medium text-text-primary dark:text-gray-200 hover:bg-brand-orange/10 dark:hover:bg-brand-yellow/10 transition-colors cursor-pointer"
+                  }
                 >
-                  <Icon className="h-4 w-4 text-brand-orange dark:text-brand-yellow" />
+                  <Icon className={`h-[1.2rem] w-[1.2rem] ${highlight ? "text-white" : "text-brand-orange dark:text-brand-yellow"}`} />
                   {label}
-                </span>
+                </a>
               ))}
             </div>
 
           </ScrollReveal>
 
-          {/* Right: QR card with glow */}
-          <ScrollReveal variant="fade-up" delay={0.3} className="flex justify-center md:justify-end">
+          {/* Right: QR card with glow (desktop only — scanning a QR on your own phone doesn't make sense) */}
+          <ScrollReveal variant="fade-up" delay={0.3} className="hidden md:flex md:justify-end">
             <div className="rounded-3xl card-glass glow-brand p-8 text-center">
               <Image
                 src="/qr-code.jpg"

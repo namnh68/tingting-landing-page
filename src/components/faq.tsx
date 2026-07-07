@@ -5,17 +5,41 @@ import { FAQ_ITEMS } from "@/lib/constants";
 import { FiChevronDown } from "react-icons/fi";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
+function renderAnswerLine(line: string, link?: { text: string; href: string }) {
+  if (!link) return line;
+  const idx = line.indexOf(link.text);
+  if (idx === -1) return line;
+  return (
+    <>
+      {line.slice(0, idx)}
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-brand-orange dark:text-brand-yellow underline underline-offset-2"
+      >
+        {link.text}
+      </a>
+      {line.slice(idx + link.text.length)}
+    </>
+  );
+}
+
 function FAQItem({
   question,
   answer,
+  link,
   isOpen,
   onToggle,
 }: {
   question: string;
   answer: string;
+  link?: { text: string; href: string };
   isOpen: boolean;
   onToggle: () => void;
 }) {
+  const lines = answer.split("\n");
+
   return (
     <div className="border-b border-surface-tertiary dark:border-dark-tertiary last:border-0">
       <button
@@ -34,11 +58,16 @@ function FAQItem({
       </button>
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-40 pb-4" : "max-h-0"
+          isOpen ? "max-h-64 pb-4" : "max-h-0"
         }`}
       >
         <p className="text-sm text-text-secondary dark:text-gray-400 leading-relaxed">
-          {answer}
+          {lines.map((line, i) => (
+            <span key={i}>
+              {i > 0 && <br />}
+              {renderAnswerLine(line, link)}
+            </span>
+          ))}
         </p>
       </div>
     </div>
@@ -66,6 +95,7 @@ export function FAQ() {
               key={index}
               question={item.question}
               answer={item.answer}
+              link={"link" in item ? item.link : undefined}
               isOpen={openIndex === index}
               onToggle={() => setOpenIndex(openIndex === index ? null : index)}
             />

@@ -109,6 +109,34 @@
   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
+/* === Step connector dashes (how-it-works) === */
+@keyframes dash-flow {
+  from { background-position-x: 0; }
+  to   { background-position-x: 16px; }
+}
+
+.step-connector-line {
+  height: 2px;
+  background-image: repeating-linear-gradient(
+    to right,
+    currentColor 0,
+    currentColor 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  animation: dash-flow 0.6s linear infinite;
+}
+
+/* === Pill breathing effect (hero highlight CTA) === */
+@keyframes pill-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.06); }
+}
+
+.animate-pill-breathe {
+  animation: pill-breathe 1.8s ease-in-out infinite;
+}
+
 /* === Reduced Motion === */
 @media (prefers-reduced-motion: reduce) {
   *,

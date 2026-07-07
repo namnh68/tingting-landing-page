@@ -10,18 +10,23 @@ export const STATS = {
 export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
-    title: "Gửi link sản phẩm",
-    description: "Gửi link sản phẩm từ Shopee hoặc TikTok, gửi vào nhóm Zalo VnTing.",
+    title: "Tham gia nhóm VnTing Zalo",
+    description: "Vào nhóm Zalo để bot VnTing phục vụ trả link.",
   },
   {
     step: 2,
-    title: "Nhận link mua hàng",
-    description: "Bot tự động gửi lại link mua hàng có tiền hoa hồng. Bạn mua hàng bình thường qua link này.",
+    title: "Gửi link sản phẩm",
+    description: "Sao chép link sản phẩm muốn mua trên Shopee/TikTok Shop/Lazada, gửi vào nhóm Zalo để nhận lại link có hoa hồng.",
   },
   {
     step: 3,
-    title: "Nhận hoàn hoa hồng",
-    description: "Đơn hàng thành công, bạn nhận lại tiền hoa hồng của đơn hàng đó.",
+    title: "Mua hàng với link VnTing gửi",
+    description: "Thực hiện mua hàng như bình thường với link VnTing có hoa hồng.",
+  },
+  {
+    step: 4,
+    title: "Nhận hoa hồng",
+    description: "Sau khi mua hàng thành công, VnTing sẽ nhận được hoa hồng từ sàn sau đó chia lại 80% cho bạn.",
   },
 ] as const;
 
@@ -38,6 +43,12 @@ export const FAQ_ITEMS = [
     question: "Dịch vụ này là gì và tại sao tôi lại được nhận tiền?",
     answer:
       "Mỗi đơn hàng trên Shopee, TikTok Shop… vốn đã có sẵn một khoản hoa hồng tiếp thị mà sàn và người bán trả cho bên giới thiệu. Khi bạn mua qua VnTing, khoản hoa hồng đó về VnTing, và VnTing chia lại 80% cho bạn. Bạn vẫn mua đúng shop, đúng giá — không phát sinh thêm chi phí nào. .",
+  },
+  {
+    question: "Các bước tham gia như nào?",
+    answer:
+      "Bước 1: Tham gia nhóm VnTing Zalo để gửi link sản phẩm bạn muốn mua.\nBước 2: Nhận lại link mua hàng có hoa hồng từ VnTing và mua như bình thường.\nBước 3: Kiểm tra số tiền hoàn về sau khi đơn hàng thành công.",
+    link: { text: "nhóm VnTing Zalo", href: ZALO_GROUP_LINK },
   },
   {
     question: "Tiền hoa hồng có phải là tiền chênh giá so với thực tế mua hay không?",

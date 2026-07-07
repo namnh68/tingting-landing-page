@@ -1,5 +1,7 @@
 import { FiGift, FiShield, FiZap } from "react-icons/fi";
 import { ScrollReveal, ScrollRevealItem } from "@/components/scroll-reveal";
+import { ZALO_GROUP_LINK } from "@/lib/constants";
+import { linkifyText } from "@/lib/linkify-text";
 
 const BENEFITS = [
   {
@@ -50,7 +52,7 @@ export function Promotion() {
                   {benefit.title}
                 </h3>
                 <p className="text-sm text-text-secondary dark:text-gray-400 leading-relaxed">
-                  {benefit.description}
+                  {linkifyText(benefit.description, "nhóm Zalo", ZALO_GROUP_LINK)}
                 </p>
               </ScrollRevealItem>
             );
