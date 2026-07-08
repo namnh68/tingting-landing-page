@@ -283,25 +283,36 @@ export function PhuotGuide() {
       </header>
 
       {/* ===== TABS ===== */}
-      <nav className="sticky top-16 z-40 flex gap-1.5 overflow-x-auto border-b border-[rgba(219,39,119,0.12)] bg-surface-primary/95 px-3 py-2.5 backdrop-blur [scrollbar-width:none]">
-        <div className="mx-auto flex gap-1.5">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              onClick={() => changeTab(t.id)}
-              className={`whitespace-nowrap rounded-full px-4 py-2 text-[14.5px] font-extrabold transition-all ${
-                tab === t.id
-                  ? "bg-gradient-brand text-white shadow-[0_4px_14px_rgba(219,39,119,0.35)]"
-                  : "text-text-secondary hover:bg-surface-secondary hover:text-brand-orange"
-              }`}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
+      <nav className="sticky top-16 z-40 grid grid-cols-3 gap-1.5 border-b border-[rgba(219,39,119,0.12)] bg-surface-primary/95 px-3 py-2.5 backdrop-blur sm:grid-cols-5 sm:px-6">
+        {TABS.map((t) => (
+          <button
+            key={t.id}
+            onClick={() => changeTab(t.id)}
+            className={`rounded-full px-2 py-2 text-center text-[12.5px] font-extrabold leading-tight transition-all sm:text-[14.5px] ${
+              tab === t.id
+                ? "bg-gradient-brand text-white shadow-[0_4px_14px_rgba(219,39,119,0.35)]"
+                : "text-text-secondary hover:bg-surface-secondary hover:text-brand-orange"
+            }`}
+          >
+            {t.label}
+          </button>
+        ))}
       </nav>
 
       <main ref={panelsRef} className="mx-auto max-w-5xl scroll-mt-28 px-4 py-8 sm:px-6">
+        <p className="mb-6 text-center text-[13px] font-medium text-text-muted">
+          <a
+            href="https://vnting.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-extrabold text-brand-orange hover:underline"
+          >
+            VnTing
+          </a>{" "}
+          giúp bạn mua sắm online tiết kiệm hơn — đây là cẩm nang lộ trình chi tiết cho
+          gia đình mê phượt ô tô.
+        </p>
+
         {/* ===== TỔNG QUAN ===== */}
         <div className={tab === "tongquan" ? "space-y-6" : "hidden"}>
             <div className="overflow-hidden rounded-[20px] border border-[rgba(219,39,119,0.12)] bg-white shadow-[0_8px_30px_rgba(219,39,119,0.08)]">
@@ -402,7 +413,7 @@ export function PhuotGuide() {
 
         {/* ===== LỊCH TRÌNH ===== */}
         <div className={tab === "lichtrinh" ? "" : "hidden"}>
-            <div className="sticky top-[112px] z-30 -mx-4 mb-5 grid grid-cols-4 gap-1.5 border-b border-[rgba(219,39,119,0.12)] bg-surface-primary/95 px-4 py-2.5 backdrop-blur sm:-mx-6 sm:grid-cols-8 sm:px-6">
+            <div className="sticky top-[172px] z-30 -mx-4 mb-5 grid grid-cols-4 gap-1.5 border-b border-[rgba(219,39,119,0.12)] bg-surface-primary/95 px-4 py-2.5 backdrop-blur sm:top-[112px] sm:-mx-6 sm:grid-cols-8 sm:px-6">
               {DAYS.map((d) => {
                 const place = d.chip.split("·")[1]?.trim() ?? "";
                 return (
