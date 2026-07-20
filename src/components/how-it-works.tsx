@@ -1,4 +1,5 @@
-import { HOW_IT_WORKS_STEPS, ZALO_GROUP_LINK } from "@/lib/constants";
+import { HOW_IT_WORKS_STEPS } from "@/lib/constants";
+import { getCtvConfig } from "@/lib/ctv-server";
 import {
   FiUsers, FiLink, FiShoppingCart, FiDollarSign,
   FiChevronRight, FiChevronLeft, FiChevronDown,
@@ -23,12 +24,14 @@ function StepCard({
   title,
   description,
   Icon,
+  zaloGroupLink,
   compact = false,
 }: {
   step: number;
   title: string;
   description: string;
   Icon: IconType;
+  zaloGroupLink: string;
   compact?: boolean;
 }) {
   if (compact) {
@@ -42,7 +45,7 @@ function StepCard({
         </span>
         <h3 className="text-sm font-bold mb-1 dark:text-white leading-snug">{title}</h3>
         <p className="text-xs text-text-secondary dark:text-gray-400 leading-snug">
-          {linkifyText(description, "nhóm Zalo", ZALO_GROUP_LINK)}
+          {linkifyText(description, "nhóm Zalo", zaloGroupLink)}
         </p>
       </div>
     );
@@ -62,7 +65,7 @@ function StepCard({
 
       <h3 className="text-lg font-bold mb-2 dark:text-white">{title}</h3>
       <p className="text-sm text-text-secondary dark:text-gray-400 max-w-[220px] leading-relaxed">
-        {linkifyText(description, "nhóm Zalo", ZALO_GROUP_LINK)}
+        {linkifyText(description, "nhóm Zalo", zaloGroupLink)}
       </p>
     </div>
   );
@@ -71,9 +74,11 @@ function StepCard({
 function MobileStepRow({
   pair,
   direction,
+  zaloGroupLink,
 }: {
   pair: [number, number];
   direction: "right" | "left";
+  zaloGroupLink: string;
 }) {
   const ArrowIcon = direction === "right" ? FiChevronRight : FiChevronLeft;
   return (
@@ -93,6 +98,7 @@ function MobileStepRow({
               title={step.title}
               description={step.description}
               Icon={STEP_ICONS[index]}
+              zaloGroupLink={zaloGroupLink}
               compact
             />
           </div>
@@ -102,7 +108,8 @@ function MobileStepRow({
   );
 }
 
-export function HowItWorks() {
+export async function HowItWorks() {
+  const { zaloGroupLink } = await getCtvConfig();
   return (
     <section id="how-it-works" className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
@@ -117,14 +124,14 @@ export function HowItWorks() {
 
         {/* Mobile: compact 2x2 grid, clockwise flow (1 → 2 → 3 → 4), no scrolling/swiping */}
         <div className="flex flex-col gap-2 md:hidden">
-          <MobileStepRow pair={[0, 1]} direction="right" />
+          <MobileStepRow pair={[0, 1]} direction="right" zaloGroupLink={zaloGroupLink} />
           <div className="grid grid-cols-2 gap-3">
             <div />
             <div className="flex justify-center">
               <FiChevronDown className="h-4 w-4 text-brand-orange dark:text-brand-yellow" />
             </div>
           </div>
-          <MobileStepRow pair={[3, 2]} direction="left" />
+          <MobileStepRow pair={[3, 2]} direction="left" zaloGroupLink={zaloGroupLink} />
         </div>
 
         {/* Desktop: grid with connector segments interleaved between steps so each
@@ -140,6 +147,7 @@ export function HowItWorks() {
                     title={step.title}
                     description={step.description}
                     Icon={STEP_ICONS[index]}
+                    zaloGroupLink={zaloGroupLink}
                   />
                 </ScrollRevealItem>,
               ];

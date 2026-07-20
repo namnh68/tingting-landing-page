@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FAQ_ITEMS } from "@/lib/constants";
+import { useCtv } from "@/lib/ctv-context";
 import { FiChevronDown } from "react-icons/fi";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
@@ -75,6 +76,7 @@ function FAQItem({
 }
 
 export function FAQ() {
+  const { zaloGroupLink } = useCtv();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -95,7 +97,7 @@ export function FAQ() {
               key={index}
               question={item.question}
               answer={item.answer}
-              link={"link" in item ? item.link : undefined}
+              link={"link" in item ? { ...item.link, href: zaloGroupLink } : undefined}
               isOpen={openIndex === index}
               onToggle={() => setOpenIndex(openIndex === index ? null : index)}
             />

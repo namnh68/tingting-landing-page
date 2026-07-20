@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
-import { ZALO_GROUP_LINK, NAV_ITEMS } from "@/lib/constants";
+import { NAV_ITEMS } from "@/lib/constants";
+import { useCtv } from "@/lib/ctv-context";
 import { FiMenu, FiX } from "react-icons/fi";
 
 function NavLink({
@@ -34,6 +35,7 @@ function NavLink({
 }
 
 export function Header() {
+  const { zaloGroupLink } = useCtv();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -91,7 +93,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <ThemeToggle />
             <a
-              href={ZALO_GROUP_LINK}
+              href={zaloGroupLink}
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:block rounded-full bg-gradient-brand px-4 py-2 text-sm font-semibold text-white shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all"
@@ -132,7 +134,7 @@ export function Header() {
               </NavLink>
             ))}
             <a
-              href={ZALO_GROUP_LINK}
+              href={zaloGroupLink}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}

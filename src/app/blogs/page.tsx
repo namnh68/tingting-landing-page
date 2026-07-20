@@ -5,7 +5,7 @@ import { getAllPosts } from "@/lib/posts";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 const SITE_URL = "https://vnting.com";
 

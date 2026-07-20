@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import { getCtvConfig, getCtvMeta } from "@/lib/ctv-server";
+import { CtvProvider } from "@/lib/ctv-context";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -12,7 +14,12 @@ const nunito = Nunito({
 
 const SITE_URL = "https://vnting.com";
 
-export const metadata: Metadata = {
+// Every route reads the CTV config (directly or via context from this layout), which
+// depends on the request Host header — force per-request rendering everywhere so
+// host-based personalization (links/QR/SEO) isn't baked in at build time.
+export const dynamic = "force-dynamic";
+
+const baseMetadata: Metadata = {
   icons: {
     icon: "/icon.svg",
     apple: "/icon.svg",
@@ -60,11 +67,22 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 };
 
-export default function RootLayout({
+export async function generateMetadata(): Promise<Metadata> {
+  const { isDefault, path } = await getCtvMeta();
+  if (isDefault) return baseMetadata;
+  return {
+    ...baseMetadata,
+    robots: { index: false, follow: true },
+    alternates: { canonical: `${SITE_URL}${path}` },
+  };
+}
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const ctv = await getCtvConfig();
   return (
     <html lang="vi" suppressHydrationWarning>
       <body className={`${nunito.variable} font-sans antialiased`}>
@@ -80,7 +98,9 @@ export default function RootLayout({
             }),
           }}
         />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <CtvProvider value={ctv}>{children}</CtvProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

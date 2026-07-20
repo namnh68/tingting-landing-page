@@ -7,6 +7,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.2.0] — 2026-07-20
+
+### Added
+- **Multi-CTV Personalization**
+  - Per-subdomain content personalization (e.g., `ainguyen.vnting.com`)
+  - Dynamic Zalo group link, Zalo personal link, and QR image resolution by request hostname
+  - Static `CTV_MAP` configuration in `src/lib/ctv-config.ts` (no database)
+  - Middleware request header forwarding (`x-ctv-id`, `x-ctv-path`)
+  - Server component `getCtvConfig()` and `getCtvMeta()` for CTV resolution
+  - Client context `CtvProvider` + `useCtv()` hook for component access
+  - SEO handling: `robots: {index: false}` + canonical URL for CTV subdomains (root domain is canonical)
+  - QR asset convention: `public/images/ctv/{slug}/qr.jpg`
+  - Development override: `?ctv={hostname-key}` query parameter (development-only, tree-shaken in production)
+
+- **Cloudflare Workers Integration**
+  - Deployment platform confirmed as Cloudflare Workers via OpenNext
+  - Custom domain provisioning flow documented (auto-DNS + SSL via Cloudflare dashboard)
+  - External domain routing support (same Cloudflare account, different account, or non-Cloudflare registrar)
+
+- **Dynamic Rendering Fix**
+  - Explicit `export const dynamic = "force-dynamic"` added to all CTV-consuming routes to ensure per-request Host header resolution
+  - Affected: `src/app/page.tsx`, `src/app/blogs/page.tsx`, `src/app/blogs/phuot-ha-noi-da-nang/page.tsx`, `src/app/blogs/[slug]/page.tsx`
+  - **Critical rule:** Future pages using CTV components MUST set dynamic rendering to "force-dynamic"
+
+### Changed
+- `src/app/layout.tsx` — Now async, calls `getCtvConfig()` for per-request CTV resolution
+- `src/app/layout.tsx` — Wraps children in `<CtvProvider>` for client-side CTV access
+- `src/app/layout.tsx` — Metadata branches by CTV host (adds noindex + canonical for subdomains)
+- 10 consumer components updated to use `getCtvConfig()` (server) or `useCtv()` (client)
+- Hero QR code and final CTA QR code now use `ctv.qrImage` instead of hardcoded `/qr-code.jpg`
+- `public/images/` structure extended: added `public/images/ctv/{slug}/` subdirectories for per-CTV QR images
+
+### Fixed
+- **Dynamic Rendering Bug:** Child pages with `generateStaticParams` now explicitly force dynamic rendering to prevent baking DEFAULT_CTV at build time
+
+### Security
+- Middleware dev-only query override (`?ctv=`) eliminated from production builds (tree-shaken via `NODE_ENV === "development"`)
+- Subdomains marked non-indexable (`robots: {index: false}`) to prevent duplicate content indexing
+- No sensitive data in static `CTV_MAP` configuration
+
+---
+
 ## [0.1.0] — 2026-04-26
 
 ### Added

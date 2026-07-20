@@ -1,6 +1,6 @@
 import { FiGift, FiShield, FiZap } from "react-icons/fi";
 import { ScrollReveal, ScrollRevealItem } from "@/components/scroll-reveal";
-import { ZALO_GROUP_LINK } from "@/lib/constants";
+import { getCtvConfig } from "@/lib/ctv-server";
 import { linkifyText } from "@/lib/linkify-text";
 
 const BENEFITS = [
@@ -24,7 +24,8 @@ const BENEFITS = [
   },
 ];
 
-export function Promotion() {
+export async function Promotion() {
+  const { zaloGroupLink } = await getCtvConfig();
   return (
     <section className="py-16 md:py-24 bg-surface-secondary dark:bg-dark-secondary">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
@@ -52,7 +53,7 @@ export function Promotion() {
                   {benefit.title}
                 </h3>
                 <p className="text-sm text-text-secondary dark:text-gray-400 leading-relaxed">
-                  {linkifyText(benefit.description, "nhóm Zalo", ZALO_GROUP_LINK)}
+                  {linkifyText(benefit.description, "nhóm Zalo", zaloGroupLink)}
                 </p>
               </ScrollRevealItem>
             );

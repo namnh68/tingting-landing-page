@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { ZALO_GROUP_LINK } from "@/lib/constants";
+import { getCtvConfig } from "@/lib/ctv-server";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
-export function CTAFinal() {
+export async function CTAFinal() {
+  const { zaloGroupLink, qrImage } = await getCtvConfig();
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center">
@@ -19,7 +20,7 @@ export function CTAFinal() {
 
               <div className="inline-block rounded-2xl bg-white p-4 shadow-lg mb-6">
                 <Image
-                  src="/qr-code.jpg"
+                  src={qrImage}
                   alt="QR Code nhóm Zalo VnTing"
                   width={180}
                   height={180}
@@ -32,7 +33,7 @@ export function CTAFinal() {
               </p>
 
               <a
-                href={ZALO_GROUP_LINK}
+                href={zaloGroupLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block rounded-full bg-white px-10 py-4 text-lg font-bold text-brand-orange shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer"

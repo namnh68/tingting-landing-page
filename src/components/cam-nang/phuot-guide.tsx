@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ZALO_GROUP_LINK } from "@/lib/constants";
+import { useCtv } from "@/lib/ctv-context";
 import {
   HERO_STATS,
   OVERVIEW,
@@ -142,6 +142,7 @@ function GCard({
 
 /* ---------------- Checklist ---------------- */
 function ChecklistPanel() {
+  const { zaloGroupLink } = useCtv();
   const [checked, setChecked] = useState<Record<number, boolean>>({});
   const done = Object.values(checked).filter(Boolean).length;
   const total = CHECKLIST.length;
@@ -170,7 +171,7 @@ function ChecklistPanel() {
             Tìm hiểu thêm tại vnting.com →
           </a>
           <a
-            href={ZALO_GROUP_LINK}
+            href={zaloGroupLink}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold text-brand-orange underline underline-offset-4 transition-opacity hover:opacity-80"
@@ -225,6 +226,7 @@ function ChecklistPanel() {
 
 /* ================= Main ================= */
 export function PhuotGuide() {
+  const { zaloGroupLink } = useCtv();
   const [tab, setTab] = useState<TabId>("tongquan");
   const [pendingDay, setPendingDay] = useState<number | null>(null);
   const panelsRef = useRef<HTMLDivElement>(null);
@@ -490,7 +492,7 @@ export function PhuotGuide() {
               Tìm hiểu thêm tại vnting.com →
             </a>
             <a
-              href={ZALO_GROUP_LINK}
+              href={zaloGroupLink}
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-semibold text-white/90 underline underline-offset-4 transition-opacity hover:opacity-80"

@@ -2,27 +2,29 @@
 
 import { SiZalo } from "react-icons/si";
 import { FaUsers } from "react-icons/fa";
-import { ZALO_PERSONAL_LINK, ZALO_GROUP_LINK } from "@/lib/constants";
-
-const BUTTONS = [
-  {
-    href: ZALO_GROUP_LINK,
-    icon: <FaUsers className="w-5 h-5 shrink-0" />,
-    label: "Nhóm Zalo",
-    ariaLabel: "Tham gia nhóm Zalo VnTing",
-    className:
-      "bg-gradient-to-br from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600",
-  },
-  {
-    href: ZALO_PERSONAL_LINK,
-    icon: <SiZalo className="w-5 h-5 shrink-0" />,
-    label: "Liên hệ",
-    ariaLabel: "Liên hệ trực tiếp qua Zalo",
-    className: "bg-blue-500 hover:bg-blue-600",
-  },
-] as const;
+import { useCtv } from "@/lib/ctv-context";
 
 export function FloatingButtons() {
+  const { zaloGroupLink, zaloPersonalLink } = useCtv();
+
+  const BUTTONS = [
+    {
+      href: zaloGroupLink,
+      icon: <FaUsers className="w-5 h-5 shrink-0" />,
+      label: "Nhóm Zalo",
+      ariaLabel: "Tham gia nhóm Zalo VnTing",
+      className:
+        "bg-gradient-to-br from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600",
+    },
+    {
+      href: zaloPersonalLink,
+      icon: <SiZalo className="w-5 h-5 shrink-0" />,
+      label: "Liên hệ",
+      ariaLabel: "Liên hệ trực tiếp qua Zalo",
+      className: "bg-blue-500 hover:bg-blue-600",
+    },
+  ] as const;
+
   return (
     <div className="fixed right-4 bottom-24 md:bottom-10 z-50 flex flex-col gap-3">
       {BUTTONS.map(({ href, icon, label, ariaLabel, className }) => (

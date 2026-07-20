@@ -1,6 +1,7 @@
-import { ZALO_GROUP_LINK } from "@/lib/constants";
+import { getCtvConfig } from "@/lib/ctv-server";
 
-export function Footer() {
+export async function Footer() {
+  const { zaloGroupLink } = await getCtvConfig();
   return (
     <footer className="border-t border-surface-tertiary dark:border-dark-tertiary bg-surface-secondary dark:bg-dark-secondary">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8">
@@ -34,7 +35,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href={ZALO_GROUP_LINK}
+                  href={zaloGroupLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-brand-orange transition-colors"

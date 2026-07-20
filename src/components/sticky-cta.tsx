@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ZALO_GROUP_LINK } from "@/lib/constants";
+import { useCtv } from "@/lib/ctv-context";
 
 export function StickyCtaBar() {
+  const { zaloGroupLink } = useCtv();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export function StickyCtaBar() {
       style={{ paddingBottom: "calc(env(safe-area-inset-bottom) + 16px)" }}
     >
       <a
-        href={ZALO_GROUP_LINK}
+        href={zaloGroupLink}
         target="_blank"
         rel="noopener noreferrer"
         className="block w-full rounded-full bg-gradient-brand py-3.5 text-center text-base font-bold text-white shadow-md active:scale-95 transition-transform"

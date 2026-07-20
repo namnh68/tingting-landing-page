@@ -6,7 +6,7 @@ import {
   LuFootprints, LuGamepad2, LuApple, LuBookOpen,
   LuPawPrint, LuDumbbell,
 } from "react-icons/lu";
-import { ZALO_GROUP_LINK } from "@/lib/constants";
+import { getCtvConfig } from "@/lib/ctv-server";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import type { IconType } from "react-icons";
 
@@ -23,13 +23,15 @@ const MARQUEE_ITEMS: { label: string; rate: string; Icon: IconType }[] = [
   { label: "Thể thao", rate: "11%", Icon: LuDumbbell },
 ];
 
-const HIGHLIGHTS: { label: string; Icon: IconType; href: string; external?: boolean; highlight?: boolean }[] = [
-  { label: "Tìm hiểu thêm", Icon: FiHelpCircle, href: "#faq" },
-  { label: "Cách hoạt động", Icon: FiPlayCircle, href: "#how-it-works" },
-  { label: "Tham gia ngay", Icon: FiUsers, href: ZALO_GROUP_LINK, external: true, highlight: true },
-];
+export async function Hero() {
+  const { zaloGroupLink, qrImage } = await getCtvConfig();
 
-export function Hero() {
+  const HIGHLIGHTS: { label: string; Icon: IconType; href: string; external?: boolean; highlight?: boolean }[] = [
+    { label: "Tìm hiểu thêm", Icon: FiHelpCircle, href: "#faq" },
+    { label: "Cách hoạt động", Icon: FiPlayCircle, href: "#how-it-works" },
+    { label: "Tham gia ngay", Icon: FiUsers, href: zaloGroupLink, external: true, highlight: true },
+  ];
+
   return (
     <section id="hero-section" className="relative pt-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-brand-orange/8 via-brand-yellow/4 to-transparent dark:from-brand-orange/5 dark:via-transparent dark:to-transparent" />
@@ -96,7 +98,7 @@ export function Hero() {
           <ScrollReveal variant="fade-up" delay={0.3} className="hidden md:flex md:justify-end">
             <div className="rounded-3xl card-glass glow-brand p-8 text-center">
               <Image
-                src="/qr-code.jpg"
+                src={qrImage}
                 alt="QR Code nhóm Zalo VnTing"
                 width={240}
                 height={240}
@@ -107,7 +109,7 @@ export function Hero() {
                 Quét mã bằng Zalo để vào nhóm
               </p>
               <a
-                href={ZALO_GROUP_LINK}
+                href={zaloGroupLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-brand px-6 py-3 text-sm font-bold text-white shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer"

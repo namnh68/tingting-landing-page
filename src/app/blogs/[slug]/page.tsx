@@ -3,17 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { getPostBySlug } from "@/lib/posts";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 const SITE_URL = "https://vnting.com";
-
-export function generateStaticParams() {
-  return getAllPosts().map((p) => ({ slug: p.slug }));
-}
 
 export async function generateMetadata({
   params,

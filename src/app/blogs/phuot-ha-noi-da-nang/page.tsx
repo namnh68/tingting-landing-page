@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { PhuotGuide } from "@/components/cam-nang/phuot-guide";
 import { OG_IMAGE_PATH } from "@/lib/phuot-data";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 const SITE_URL = "https://vnting.com";
 const PAGE_PATH = "/blogs/phuot-ha-noi-da-nang";
