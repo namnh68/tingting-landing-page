@@ -1,7 +1,7 @@
 import { getCtvConfig } from "@/lib/ctv-server";
 
 export async function Footer() {
-  const { zaloGroupLink } = await getCtvConfig();
+  const { zaloGroupLink, shareRate } = await getCtvConfig();
   return (
     <footer className="border-t border-surface-tertiary dark:border-dark-tertiary bg-surface-secondary dark:bg-dark-secondary">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8">
@@ -58,7 +58,7 @@ export async function Footer() {
           <p className="text-xs text-text-muted text-center leading-relaxed">
             Disclaimer: Hoa hồng phụ thuộc vào chính sách affiliate của từng sàn thương mại
             (Shopee, TikTok Shop). Tỷ lệ hoàn và thời gian xử lý có thể thay đổi. VnTing
-            hoàn lại 80% hoa hồng affiliate nhận được. Không phải là dịch vụ tài chính.
+            hoàn lại {shareRate}% hoa hồng affiliate nhận được. Không phải là dịch vụ tài chính.
           </p>
         </div>
 

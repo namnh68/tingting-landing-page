@@ -1,40 +1,43 @@
 import { FiX, FiCheck } from "react-icons/fi";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { getCtvConfig } from "@/lib/ctv-server";
 
-const COMPARISON_ROWS = [
-  {
-    feature: "Hoàn tiền",
-    normal: "Không có",
-    tingting: "Hoàn lên đến 80% hoa hồng",
-    normalBad: true,
-  },
-  {
-    feature: "Chi phí",
-    normal: "Không",
-    tingting: "Miễn phí trọn đời",
-    normalBad: false,
-  },
-  {
-    feature: "Mã giảm giá",
-    normal: "Tự tìm",
-    tingting: "Được gắn mã 20-25% tự động",
-    normalBad: true,
-  },
-  {
-    feature: "Thao tác",
-    normal: "Mua trực tiếp",
-    tingting: "Chỉ 1 bước gửi link vào nhóm",
-    normalBad: false,
-  },
-  {
-    feature: "Tốc độ",
-    normal: "—",
-    tingting: "Bot trả link ngay lập tức",
-    normalBad: true,
-  },
-];
+export async function Comparison() {
+  const { shareRate } = await getCtvConfig();
 
-export function Comparison() {
+  const COMPARISON_ROWS = [
+    {
+      feature: "Hoàn tiền",
+      normal: "Không có",
+      tingting: `Hoàn lên đến ${shareRate}% hoa hồng`,
+      normalBad: true,
+    },
+    {
+      feature: "Chi phí",
+      normal: "Không",
+      tingting: "Miễn phí trọn đời",
+      normalBad: false,
+    },
+    {
+      feature: "Mã giảm giá",
+      normal: "Tự tìm",
+      tingting: "Được gắn mã 20-25% tự động",
+      normalBad: true,
+    },
+    {
+      feature: "Thao tác",
+      normal: "Mua trực tiếp",
+      tingting: "Chỉ 1 bước gửi link vào nhóm",
+      normalBad: false,
+    },
+    {
+      feature: "Tốc độ",
+      normal: "—",
+      tingting: "Bot trả link ngay lập tức",
+      normalBad: true,
+    },
+  ];
+
   return (
     <section id="comparison" className="py-16 md:py-24 bg-surface-secondary dark:bg-dark-secondary">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">

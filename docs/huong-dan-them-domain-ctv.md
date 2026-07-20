@@ -25,6 +25,7 @@ export const CTV_MAP: Record<string, CtvConfig> = {
     zaloGroupLink: "https://zalo.me/g/xxxxxxx",
     zaloPersonalLink: "https://zalo.me/0xxxxxxxxx",
     qrImage: "/images/ctv/ainguyen/qr.jpg",
+    shareRate: 80, // % hoa hồng chia lại cho khách của nhóm này (vd 70 hoặc 80)
   },
 };
 ```
@@ -62,6 +63,7 @@ curl -H "Host: ainguyen.vnting.com" https://vnting.com/
 Checklist:
 - [ ] Link Zalo nhóm/cá nhân đúng của CTV
 - [ ] QR code load được, đúng ảnh
+- [ ] Tỉ lệ ăn chia (`shareRate`) hiển thị đúng % đã thoả thuận (hero, footer, how-it-works, bảng so sánh, SEO description)
 - [ ] `<meta name="robots" content="noindex, follow">`
 - [ ] `<link rel="canonical" href="https://vnting.com...">`
 

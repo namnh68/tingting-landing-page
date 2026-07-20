@@ -3,17 +3,21 @@ import { ZALO_GROUP_LINK, ZALO_PERSONAL_LINK } from "./constants";
 export const CTV_ID_HEADER = "x-ctv-id";
 export const CTV_PATH_HEADER = "x-ctv-path";
 export const DEFAULT_QR = "/qr-code.jpg";
+export const DEFAULT_SHARE_RATE = 80;
 
 export interface CtvConfig {
   zaloGroupLink: string;
   zaloPersonalLink: string;
   qrImage: string;
+  /** % hoa hồng chia lại cho khách của CTV này, vd 70 hoặc 80. */
+  shareRate: number;
 }
 
 export const DEFAULT_CTV: CtvConfig = {
   zaloGroupLink: ZALO_GROUP_LINK,
   zaloPersonalLink: ZALO_PERSONAL_LINK,
   qrImage: DEFAULT_QR,
+  shareRate: DEFAULT_SHARE_RATE,
 };
 
 // Keyed by full hostname (subdomain or CTV custom domain). Scale <20 CTVs — static map, no DB.
@@ -22,6 +26,7 @@ export const CTV_MAP: Record<string, CtvConfig> = {
     zaloGroupLink: "https://zalo.me/g/k6o4d5ruhxt7r5zv8vpt",
     zaloPersonalLink: "https://zalo.me/g/icqgkh803",
     qrImage: "/images/ctv/ainguyen/ainguyen-qr.jpg",
+    shareRate: 70,
   },
 };
 

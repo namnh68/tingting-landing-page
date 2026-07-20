@@ -25,6 +25,7 @@ function StepCard({
   description,
   Icon,
   zaloGroupLink,
+  shareRate,
   compact = false,
 }: {
   step: number;
@@ -32,8 +33,11 @@ function StepCard({
   description: string;
   Icon: IconType;
   zaloGroupLink: string;
+  shareRate: number;
   compact?: boolean;
 }) {
+  const text = description.replace("{rate}%", `${shareRate}%`);
+
   if (compact) {
     return (
       <div className="flex flex-col items-center text-center">
@@ -45,7 +49,7 @@ function StepCard({
         </span>
         <h3 className="text-sm font-bold mb-1 dark:text-white leading-snug">{title}</h3>
         <p className="text-xs text-text-secondary dark:text-gray-400 leading-snug">
-          {linkifyText(description, "nhóm Zalo", zaloGroupLink)}
+          {linkifyText(text, "nhóm Zalo", zaloGroupLink)}
         </p>
       </div>
     );
@@ -65,7 +69,7 @@ function StepCard({
 
       <h3 className="text-lg font-bold mb-2 dark:text-white">{title}</h3>
       <p className="text-sm text-text-secondary dark:text-gray-400 max-w-[220px] leading-relaxed">
-        {linkifyText(description, "nhóm Zalo", zaloGroupLink)}
+        {linkifyText(text, "nhóm Zalo", zaloGroupLink)}
       </p>
     </div>
   );
@@ -75,10 +79,12 @@ function MobileStepRow({
   pair,
   direction,
   zaloGroupLink,
+  shareRate,
 }: {
   pair: [number, number];
   direction: "right" | "left";
   zaloGroupLink: string;
+  shareRate: number;
 }) {
   const ArrowIcon = direction === "right" ? FiChevronRight : FiChevronLeft;
   return (
@@ -99,6 +105,7 @@ function MobileStepRow({
               description={step.description}
               Icon={STEP_ICONS[index]}
               zaloGroupLink={zaloGroupLink}
+              shareRate={shareRate}
               compact
             />
           </div>
@@ -109,7 +116,7 @@ function MobileStepRow({
 }
 
 export async function HowItWorks() {
-  const { zaloGroupLink } = await getCtvConfig();
+  const { zaloGroupLink, shareRate } = await getCtvConfig();
   return (
     <section id="how-it-works" className="py-16 md:py-24">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
@@ -124,14 +131,14 @@ export async function HowItWorks() {
 
         {/* Mobile: compact 2x2 grid, clockwise flow (1 → 2 → 3 → 4), no scrolling/swiping */}
         <div className="flex flex-col gap-2 md:hidden">
-          <MobileStepRow pair={[0, 1]} direction="right" zaloGroupLink={zaloGroupLink} />
+          <MobileStepRow pair={[0, 1]} direction="right" zaloGroupLink={zaloGroupLink} shareRate={shareRate} />
           <div className="grid grid-cols-2 gap-3">
             <div />
             <div className="flex justify-center">
               <FiChevronDown className="h-4 w-4 text-brand-orange dark:text-brand-yellow" />
             </div>
           </div>
-          <MobileStepRow pair={[3, 2]} direction="left" zaloGroupLink={zaloGroupLink} />
+          <MobileStepRow pair={[3, 2]} direction="left" zaloGroupLink={zaloGroupLink} shareRate={shareRate} />
         </div>
 
         {/* Desktop: grid with connector segments interleaved between steps so each
@@ -148,6 +155,7 @@ export async function HowItWorks() {
                     description={step.description}
                     Icon={STEP_ICONS[index]}
                     zaloGroupLink={zaloGroupLink}
+                    shareRate={shareRate}
                   />
                 </ScrollRevealItem>,
               ];

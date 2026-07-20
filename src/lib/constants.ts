@@ -26,7 +26,7 @@ export const HOW_IT_WORKS_STEPS = [
   {
     step: 4,
     title: "Nhận lại hoa hồng",
-    description: "Sau khi mua hàng thành công, VnTing sẽ nhận được hoa hồng từ sàn sau đó chia lại 80% cho bạn.",
+    description: "Sau khi mua hàng thành công, VnTing sẽ nhận được hoa hồng từ sàn sau đó chia lại {rate}% cho bạn.",
   },
 ] as const;
 
@@ -56,7 +56,7 @@ export const FAQ_ITEMS = [
       "Hoàn toàn không. Bạn vẫn thao tác mua với giá bình thường. Khoản hoa hồng này được sàn và shop hỗ trợ thêm."
   },
   {
-    question: "Tại sao lại chia tận 80% hoa hồng?",
+    question: "Tại sao lại chia tận {rate}% hoa hồng?",
     answer:
       "Chúng tôi muốn xây dựng cộng đồng lớn. Thay vì giữ tất cả, chúng tôi chia sẻ phần lớn lợi nhuận để bạn gắn bó lâu dài.",
   },

@@ -19,59 +19,61 @@ const SITE_URL = "https://vnting.com";
 // host-based personalization (links/QR/SEO) isn't baked in at build time.
 export const dynamic = "force-dynamic";
 
-const baseMetadata: Metadata = {
-  icons: {
-    icon: "/icon.svg",
-    apple: "/icon.svg",
-  },
-  title: "VnTing - Hệ thống hoàn tiền hoa hồng Shopee, TikTok Shop, Lazada",
-  description:
-    "Tham gia nhóm Zalo VnTing để nhận hoàn tiền lên đến 80% hoa hồng khi mua sắm trên Shopee và TikTok Shop. Miễn phí, an toàn, tự động.",
-  keywords: [
-    "hoàn tiền shopee",
-    "hoàn tiền tiktok shop",
-    "hoa hồng affiliate",
-    "mua sắm tiết kiệm",
-    "ting ting",
-    "cashback vietnam",
-    "nhóm zalo hoàn tiền",
-  ],
-  authors: [{ name: "VnTing" }],
-  openGraph: {
-    type: "website",
-    locale: "vi_VN",
-    url: SITE_URL,
-    siteName: "VnTing",
-    title: "VnTing - Nền tảng giúp tiết kiệm hơn khi mua sắm Online",
-    description:
-      "Gửi link sản phẩm vào nhóm Zalo, nhận hoàn 80% hoa hồng affiliate. Miễn phí, tự động, an toàn.",
-    images: [
-      {
-        url: `${SITE_URL}/og-image.png`,
-        width: 1200,
-        height: 630,
-        alt: "VnTing - Săn deal hời - Hoàn hoa hồng",
-      },
+function buildMetadata(shareRate: number): Metadata {
+  return {
+    icons: {
+      icon: "/icon.svg",
+      apple: "/icon.svg",
+    },
+    title: "VnTing - Hệ thống hoàn tiền hoa hồng Shopee, TikTok Shop, Lazada",
+    description: `Tham gia nhóm Zalo VnTing để nhận hoàn tiền lên đến ${shareRate}% hoa hồng khi mua sắm trên Shopee và TikTok Shop. Miễn phí, an toàn, tự động.`,
+    keywords: [
+      "hoàn tiền shopee",
+      "hoàn tiền tiktok shop",
+      "hoa hồng affiliate",
+      "mua sắm tiết kiệm",
+      "ting ting",
+      "cashback vietnam",
+      "nhóm zalo hoàn tiền",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "VnTing - Hoàn tiền lên đến 80%",
-    description: "Nhóm Zalo hoàn tiền Shopee & TikTok Shop. Miễn phí 100%.",
-    images: [`${SITE_URL}/og-image.png`],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  metadataBase: new URL(SITE_URL),
-};
+    authors: [{ name: "VnTing" }],
+    openGraph: {
+      type: "website",
+      locale: "vi_VN",
+      url: SITE_URL,
+      siteName: "VnTing",
+      title: "VnTing - Nền tảng giúp tiết kiệm hơn khi mua sắm Online",
+      description: `Gửi link sản phẩm vào nhóm Zalo, nhận hoàn ${shareRate}% hoa hồng affiliate. Miễn phí, tự động, an toàn.`,
+      images: [
+        {
+          url: `${SITE_URL}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "VnTing - Săn deal hời - Hoàn hoa hồng",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `VnTing - Hoàn tiền lên đến ${shareRate}%`,
+      description: "Nhóm Zalo hoàn tiền Shopee & TikTok Shop. Miễn phí 100%.",
+      images: [`${SITE_URL}/og-image.png`],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    metadataBase: new URL(SITE_URL),
+  };
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const { isDefault, path } = await getCtvMeta();
-  if (isDefault) return baseMetadata;
+  const { shareRate } = await getCtvConfig();
+  const base = buildMetadata(shareRate);
+  if (isDefault) return base;
   return {
-    ...baseMetadata,
+    ...base,
     robots: { index: false, follow: true },
     alternates: { canonical: `${SITE_URL}${path}` },
   };

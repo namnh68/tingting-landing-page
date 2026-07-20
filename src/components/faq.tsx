@@ -76,7 +76,7 @@ function FAQItem({
 }
 
 export function FAQ() {
-  const { zaloGroupLink } = useCtv();
+  const { zaloGroupLink, shareRate } = useCtv();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -95,7 +95,7 @@ export function FAQ() {
           {FAQ_ITEMS.map((item, index) => (
             <FAQItem
               key={index}
-              question={item.question}
+              question={item.question.replace("{rate}%", `${shareRate}%`)}
               answer={item.answer}
               link={"link" in item ? { ...item.link, href: zaloGroupLink } : undefined}
               isOpen={openIndex === index}

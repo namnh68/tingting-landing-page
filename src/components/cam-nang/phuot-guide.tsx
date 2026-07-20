@@ -142,7 +142,7 @@ function GCard({
 
 /* ---------------- Checklist ---------------- */
 function ChecklistPanel() {
-  const { zaloGroupLink } = useCtv();
+  const { zaloGroupLink, shareRate } = useCtv();
   const [checked, setChecked] = useState<Record<number, boolean>>({});
   const done = Object.values(checked).filter(Boolean).length;
   const total = CHECKLIST.length;
@@ -159,7 +159,7 @@ function ChecklistPanel() {
         1–2 tuần cho kịp giao hàng và dễ so giá. Mấy món này mua trên Shopee/TikTok Shop
         đều <span className="font-extrabold text-brand-orange">có hoa hồng</span> — gửi
         link sản phẩm vào nhóm VnTing, vẫn mua đúng shop đúng giá, nhưng được{" "}
-        <span className="font-extrabold text-brand-orange">hoàn lại tới 80% hoa hồng</span>{" "}
+        <span className="font-extrabold text-brand-orange">hoàn lại tới {shareRate}% hoa hồng</span>{" "}
         của đơn. Gom cả danh sách dưới đây, chắc cũng đủ thêm bữa hải sản ở Kỳ Xuân 🦐
         <div className="mt-3 flex flex-col items-start gap-2.5 sm:flex-row sm:items-center">
           <a
@@ -226,7 +226,7 @@ function ChecklistPanel() {
 
 /* ================= Main ================= */
 export function PhuotGuide() {
-  const { zaloGroupLink } = useCtv();
+  const { zaloGroupLink, shareRate } = useCtv();
   const [tab, setTab] = useState<TabId>("tongquan");
   const [pendingDay, setPendingDay] = useState<number | null>(null);
   const panelsRef = useRef<HTMLDivElement>(null);
@@ -476,7 +476,7 @@ export function PhuotGuide() {
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">
             Mỗi đơn hàng trên Shopee, TikTok Shop… vốn đã có sẵn một khoản hoa hồng tiếp
             thị mà sàn trả cho bên giới thiệu. Khi bạn mua qua VnTing, khoản hoa hồng đó về
-            VnTing, và VnTing chia lại <span className="font-extrabold">80%</span> cho bạn.
+            VnTing, và VnTing chia lại <span className="font-extrabold">{shareRate}%</span> cho bạn.
             Bạn vẫn mua đúng shop, đúng giá — không phát sinh thêm chi phí nào.
           </p>
           <p className="mx-auto mt-3 max-w-xl text-sm text-white/85">

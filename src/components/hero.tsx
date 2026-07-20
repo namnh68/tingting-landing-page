@@ -24,7 +24,7 @@ const MARQUEE_ITEMS: { label: string; rate: string; Icon: IconType }[] = [
 ];
 
 export async function Hero() {
-  const { zaloGroupLink, qrImage } = await getCtvConfig();
+  const { zaloGroupLink, qrImage, shareRate } = await getCtvConfig();
 
   const HIGHLIGHTS: { label: string; Icon: IconType; href: string; external?: boolean; highlight?: boolean }[] = [
     { label: "Tìm hiểu thêm", Icon: FiHelpCircle, href: "#faq" },
@@ -70,7 +70,7 @@ export async function Hero() {
             <p className="mt-6 text-lg text-text-secondary dark:text-gray-400 max-w-lg mx-auto md:mx-0 leading-relaxed">
               Mỗi sản phẩm đều có <strong className="font-semibold text-text-primary dark:text-gray-200">hoa hồng</strong> giới thiệu - Mua trực tiếp,
               khoản tiền đó sẽ <strong className="font-semibold text-text-primary dark:text-gray-200">không</strong> thuộc về bạn. Mua qua VnTing giúp
-              bạn nhận lại <strong className="font-semibold text-brand-orange dark:text-brand-yellow">80%</strong>.
+              bạn nhận lại <strong className="font-semibold text-brand-orange dark:text-brand-yellow">{shareRate}%</strong>.
             </p>
 
             {/* Highlight pills */}

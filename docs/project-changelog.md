@@ -49,6 +49,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.2.1] — 2026-07-20
+
+### Added
+- **Per-CTV Revenue Share Rate**
+  - New required `shareRate: number` field on `CtvConfig` (e.g. 70 or 80, %), default 80 via `DEFAULT_SHARE_RATE`
+  - Replaces previously hardcoded "80%" copy across hero, footer disclaimer, how-it-works step 4, comparison table, phượt-guide CTA blocks, and SEO metadata (title/description/OG/Twitter) — each now reflects the resolved CTV's actual share rate
+  - `docs/huong-dan-them-domain-ctv.md` onboarding checklist updated to verify the rate displays correctly per CTV
+
+### Changed
+- `src/components/comparison.tsx` converted from a static Server Component to an async one (`await getCtvConfig()`) to read the per-request share rate
+- `src/app/layout.tsx` metadata builder (`baseMetadata` → `buildMetadata(shareRate)`) now parameterized by CTV share rate
+
+---
+
 ## [0.1.0] — 2026-04-26
 
 ### Added

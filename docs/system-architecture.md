@@ -151,12 +151,12 @@ HTTP Request (Host header: ainguyen.vnting.com)
         ↓
 [Server Components] src/lib/ctv-server.ts
   ├─ getCtvConfig() — reads x-ctv-id header
-  └─ Returns CtvConfig (zaloGroupLink, zaloPersonalLink, qrImage)
+  └─ Returns CtvConfig (zaloGroupLink, zaloPersonalLink, qrImage, shareRate)
         ↓
 [Client Components] src/lib/ctv-context.tsx
   ├─ CtvProvider wraps layout
   ├─ useCtv() hook → CtvConfig
-  └─ Components render personalized links/QR
+  └─ Components render personalized links/QR/share rate
 ```
 
 ### Configuration
@@ -164,9 +164,16 @@ HTTP Request (Host header: ainguyen.vnting.com)
 - **Structure:** `CTV_MAP: Record<hostname, CtvConfig>`
   ```typescript
   export const CTV_MAP: Record<string, CtvConfig> = {
-    // "ainguyen.vnting.com": { zaloGroupLink: "...", zaloPersonalLink: "...", qrImage: "/images/ctv/ainguyen/qr.jpg" },
+    // "ainguyen.vnting.com": {
+    //   zaloGroupLink: "...", zaloPersonalLink: "...",
+    //   qrImage: "/images/ctv/ainguyen/qr.jpg",
+    //   shareRate: 80, // % hoa hồng chia lại cho khách, vd 70 hoặc 80
+    // },
   };
   ```
+- **`shareRate: number`** — required field, % hoa hồng CTV chia lại cho khách. Interpolated
+  into copy across hero, footer, how-it-works step 4, comparison table, phượt-guide, and
+  SEO metadata (title/description/OG/Twitter). Default `DEFAULT_SHARE_RATE = 80`.
 - **QR Asset Convention:** `public/images/ctv/{slug}/qr.jpg`
 - **Deployment:** Static config only; no runtime DB queries
 
@@ -213,7 +220,8 @@ export const CTV_MAP: Record<string, CtvConfig> = {
   "ainguyen.vnting.com": {
     zaloGroupLink: "https://zalo.me/g/...",
     zaloPersonalLink: "https://zalo.me/...",
-    qrImage: "/images/ctv/ainguyen/qr.jpg"
+    qrImage: "/images/ctv/ainguyen/qr.jpg",
+    shareRate: 80
   }
 };
 ```
